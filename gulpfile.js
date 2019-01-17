@@ -100,7 +100,7 @@ function measureSize() {
     .pipe($.size({title: 'build', gzip: true}));
 }
 
-exports.build = series(
+let build = series(
   parallel(
     lint,
     series(parallel(styles, scripts), html),
