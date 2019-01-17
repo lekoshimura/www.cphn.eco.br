@@ -38,6 +38,7 @@
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
 
@@ -46,122 +47,65 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <main class="container">
-    <article class="content article__o-cphn">
-
-      <h1 class="title">O CPHN</h1>
-
-      <p>Somos uma entidade privada sem fins lucrativos voltada à promoção do estudo e do contato de homem com a
-        natureza. A composição de nossos filiados é bastante heterogênea. Somos botânicos, arquitetos, médicos,
-        donas-de-casa, executivos, professores, estudantes, aposentados, etc. Enfim, o elo da união não é a profissão,
-        mas sim, o gosto pelos diversos aspectos da natureza. A participação é aberta para todos.</p>
-
-      <p>Dentro da imensa questão do meio ambiente, sempre procuramos destacar o desenvolvimento do sentimento do amor
-        pela nossa natureza. Para preservar é preciso gostar e para gostar é preciso conhecer.</p>
-
-      <p>A associação foi criada em São Paulo em 15 de agosto de 1950 sob a égide dos entusiastas imigrantes japoneses
-        que desejavam criar uma entidade que propiciasse uma nova reflexão do ser humano através da sua relação com a
-        natureza. A cerimônia de inauguração contou com a presença do ilustre Hiroshi Tamiya, professor da Universidade
-        de Tóquio e representante oficial do Japão no V Congresso Internacional de Microbiologia em 1950.</p>
-
-      <p>Ainda no clima nebuloso e tenso da comunidade nipo-brasileira do pós-guerra, os fundadores do CPHN viam na
-        natureza brasileira a sua grande fonte de inspiração e ensinamento para o congraçamento com a sociedade
-        democrática que se vislumbrava. Desde então, a entidade é mantida com a participação voluntária de seus
-        associados e colaboradores que se identificam com a causa.</p>
-
-      <p>Nossos objetivos são:</p>
-
-      <ul>
-        <li>Promover estudos junto à natureza, abrangendo os reinos animal, vegetal e mineral; </li>
-        <li>Aprofundar o conhecimento, a compreensão e o sentimento de respeito pela natureza que nos cerca. </li>
-        <li>Buscar a familiarização do homem com a história natural, visando conscientizá-lo do valor da natureza; e,</li>
-        <li>Cultivar o espírito de preservação do meio ambiente.</li>
-      </ul>
-
-      <p>Ao longo deste período, o CPHN vem realizando atividades voltadas à Botânica com atenção especial na área de
-        taxonomia vegetal através da orientação do botânico Goro Hashimoto, fundador do CPHN e atualmente seu
-        consultor.
-        Já realizamos cerca de 100 expedições e viagens de observação, coleta e identificação de plantas de diversas
-        regiões do Brasil. A entidade conta atualmente com um acervo de mais de 150.000 exemplares de plantas
-        herborizadas que estão disponíveis no Herbário Goro Hashimoto, localizado em nossa sede.</p>
-
-      <p>Anualmente são programadas viagens de estudo para diferentes regiões para coleta de plantas, herborização,
-        identificação e catalogação, além de palestras, exposições e publicações.</p>
-    </article>
-
-    <article class="content article__goro-hashimoto">
-      <h1 class="title">Goro Hashimoto</h1>
-
+  <header>
+    <!-- START NAV -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="images/logo-black.png" alt="Logo">
+            <spam class="header--logo-txt title--cphn">CPHN</spam>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Onde Estamos
+            </a>
+            <a class="navbar-item">
+              Nossas Publicações
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAV -->
+    <!-- START BACKGROUND -->
+    <div class="header--background">
       <picture>
-        <source media="(min-width: 1024px)" type="image/webp" srcset="images/goro/goro_high.webp">
-        <source media="(min-width: 1024px)" type="image/jpeg" srcset="images/goro/goro_high.jpg">
-        <source media="(max-width: 1023px)" type="image/webp" srcset="images/goro/goro_100q_25pc.webp">
-        <source media="(max-width: 1023px)" type="image/jpeg" srcset="images/goro/goro_100q_25pc.jpg">
-        <img src="images/goro/goro_high.jpg" alt="Goro Hashimoto">
+        <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.webp 1x, images/banner/banner-lg_2x.webp 2x"
+          type="image/webp">
+        <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.webp 1x, images/banner/banner-md_2x.webp 2x"
+          type="image/webp">
+        <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.webp 1x, images/banner/banner-sm_2x.webp 2x"
+          type="image/webp">
+        <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.jpg 1x, images/banner/banner-lg_2x.jpg 2x"
+          type="image/jpg">
+        <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.jpg 1x, images/banner/banner-md_2x.jpg 2x"
+          type="image/jpg">
+        <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.jpg 1x, images/banner/banner-sm_2x.jpg 2x"
+          type="image/jpg">
+        <img src="images/banner/banner-lg_1x.jpg" type="image/jpeg" alt="Expedição Pedra Grande">
       </picture>
-
-      <p>A alma do CPHN é o botânico Goro Hashimoto especializado em taxonomia vegetal. Sócio fundador e hoje
-        consultor, liderou centenas de expedições e viagens de observação, coleta e identificação das plantas da imensa
-        flora brasileira. Os frutos deste trabalho de longos anos estão no acervo do Herbário Goro Hashimoto, mantido
-        pelo CPHN no Bairro de Itaquera, onde também fica a atual sede do CPHN.</p>
-
-      <p>Amante das ciências naturais e desde cedo um apaixonado pela diversidade da flora, imigrou jovem e só ao
-        Brasil, e aqui encontrou a rica e exuberante fonte de trabalho.</p>
-
-      <p>O Prof. Goro Hashimoto é mais conhecido no Japão do que no Brasil, tendo recebido o título de “Doctor Honoris
-        Causa” pela Universidade de Shizuoka, Japão. Um dos seus últimos trabalhos é a “Enciclopédia de Plantas
-        Medicinais Brasileiras”, publicada no Japão.</p>
-    </article>
-
-    <article class="content article__herbario">
-      <h1 class="title">Nosso Herbário</h1>
-
-      <img src="images/herbario.jpg" width="400" height="169" style="float:left; margin: 1rem" />
-
-      <p>O Herbário Goro Hashimoto constitui-se certamente num dos maiores acervos de plantas herborizadas, em se
-        tratando de entidade privada. A sua criação foi um sonho acalentado por quatro décadas e começou a
-        materializar-se em 1992 com a doação de um terreno de 2.100m<sup>2</sup> por parte do Sr. Patrício Yoshioka em
-        Itaquera.</p>
-
-      <p>No mesmo ano iniciou-se a campanha para a arrecadação dos fundos para o início das construções. Com a
-        colaboração de entusiastas brasileiros e estrangeiros foi lançada a pedra fundamental em junho de 1994 e a
-        inauguração do herbário e da sede própria efetivou-se em 25 de janeiro de 1997.</p>
-
-      <p>O acervo do herbário CPHN das plantas brasileiras teve início no interesse pessoal do Prof. Goro Hashimoto.
-        Amante das ciências naturais e desde cedo um apaixonado pela diversidade da flora, imigrou jovem e só ao
-        Brasil, e aqui encontrou a rica e exuberante fonte de trabalho. A coleta sistemática de exemplares da flora
-        nativa e o estudo taxonômico foi iniciado nesta época, como uma ação individual. Porém, logo os amigos que se
-        interessavam que simpatizaram com esta iniciativa reuniram-se. </p>
-
-      <p>Ao longo destes anos, mais de 100 expedições de coleta de exemplares de plantas nativas foram realizadas em
-        todo o território brasileiro. Os exemplares de plantas foram herborizados e colecionados, contituem hoje um
-        valioso acervo de cerca de 150.000 exsicatas. Esta coleção representa hoje, um importante patrimônio histórico,
-        pois muitas destas plantas já estão extintas ou são representantes de locais que já não existem mais como são
-        os casos das Cataratas de Sete Quedas, da parte destruída da Mata Atlântica, da vegetação desaparecida do Pico
-        do Jaraguá (S. Paulo) e de outros tantos casos de desmatamento. Outros exemplares constituem um valioso
-        material de referência aos cientistas e pesquisadores da botânica para consulta e estudo. Pesquisadores de
-        outras áreas, como a química e farmacêutica, encontram neste acervo exemplares em potencial para atender às
-        suas necessidades e perspectivas de prospecção.</p>
-
-      <p>O seu maior desejo do Prof Hashimoto é de deixar um acervo organizado para atender aos interessados na
-        continuidade e utilização benéfica deste trabalho que constitui o seu projeto de vida.</p>
-    </article>
-
-    <article class="content article__conheca-o-verde">
-      <h1 class="title">Conheça o Verde</h1>
-
-      <p>O CPHN concebeu e executou um grande projeto em parceria com o DEPAVE - Departamento de Parques e Áreas Verdes
-        do Município de São Paulo, a obra Conheça o Verde, entre 1985 e 1988 envolvendo o estudo botânico dos 17
-        parques do município de São Paulo existentes na época. Fizemos a identificação, catalogação, mapeamento das
-        plantas, registro fotográfico e instalação de placas de classificação biológica das plantas, totalizando 539
-        espécies.
-      </p>
-
-      <p>Para cada parque pesquisado, publicou-se um fascículo denominado Conheça o Verde para ser distribuído aos
-        freqüentadores. Todos os fascículos foram reunidos em um único volume reconhecido pela Fundação para o
-        Desenvolvimento de Materiais Escolares do Estado de São Paulo.</p>
-    </article>
-  </main>
+    </div>
+    <!-- END BACKGROUND -->
+    <section class="hero is-medium is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title title--cphn has-text-white">CPHN</h1>
+          <h2 class="subtitle has-text-white">Centro de Pesquisas de História Natural</h2>
+        </div>
+      </div>
+    </section>
+  </header>
 
   <!-- build:js scripts/vendor.js -->
 

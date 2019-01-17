@@ -1,29 +1,109 @@
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway:800|Roboto|Work+Sans');
 
+html,
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-family: 'Roboto', sans-serif;
+  background: #F0F2F4;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
+.navbar.is-white {
+  background: #F0F2F4;
 }
 
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.navbar-brand .brand-text {
+  font-size: 1.11rem;
+  font-weight: bold;
+}
+
+.articles {
+  margin: 5rem 0;
+  margin-top: -200px;
+}
+
+.articles .content p {
+  line-height: 1.9;
+  margin: 15px 0;
+}
+
+.author-image {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+}
+
+.media-center {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.media-content {
+  margin-top: 3rem;
+}
+
+.article,
+.promo-block {
+  margin-top: 6rem;
+}
+
+div.column.is-8:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.article-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+
+.article-subtitle {
+  color: #909AA0;
+  margin-bottom: 3rem;
+}
+
+.article-body {
+  line-height: 1.4;
+  margin: 0 6rem;
+}
+
+.promo-block .container {
+  margin: 1rem 5rem;
+}
+
+/* CPHN */
+
+.header--logo-txt {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.title--cphn {
+  font-family: "Raleway", sans-serif;
+}
+
+.header--background {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 50rem;
+  overflow: hidden;
+}
+
+.header--background img {
+  margin: -30rem 0;
+}
+@media (max-width: 1024px) {
+  .header--background img {
+    margin: -15rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .header--background img {
+    margin: -13rem 0;
+  }
 }
