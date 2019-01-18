@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:800|Roboto|Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Raleway:800|Roboto');
 
 html,
 body {
@@ -17,13 +17,13 @@ body {
 
 .articles {
   max-width: 960px;
-  margin-top: 0;
+  margin-top: -6rem;
   margin-bottom: 8rem;
 }
 
 @media (max-width: 1024px) {
   .articles {
-    margin-top: -8rem;
+    margin-top: -9rem;
   }
 }
 
@@ -69,8 +69,7 @@ body {
   margin-top: 3rem;
 }
 
-.article,
-.promo-block {
+.article {
   margin-top: 6rem;
 }
 
@@ -116,6 +115,35 @@ div.column.is-8:first-child {
 .title--cphn {
   font-family: "Raleway", sans-serif;
   color: #1B5E20;
+  font-weight: 600;
+}
+
+.title--cphn--big {
+  font-size: 5rem;
+}
+
+.subtitle--cphn--big {
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .title--cphn--big {
+    font-size: 4rem;
+  }
+
+  .subtitle--cphn--big {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title--cphn--big {
+    font-size: 3rem;
+  }
+
+  .subtitle--cphn--big {
+    font-size: 1rem;
+  }
 }
 
 .header--background {
