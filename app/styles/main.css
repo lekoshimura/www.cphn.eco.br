@@ -16,6 +16,7 @@ body {
 }
 
 .articles {
+  max-width: 960px;
   margin-top: 0;
   margin-bottom: 8rem;
 }
@@ -131,4 +132,10 @@ div.column.is-8:first-child {
   display: flex;
   justify-content: center;
   align-items: center
+}
+
+/* Bulma Carousel */
+
+.carousel-nav-left, .carousel-nav-right {
+  cursor: pointer;
 }
