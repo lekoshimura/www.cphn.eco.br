@@ -5,6 +5,19 @@
 * Node Version Manager: <https://github.com/creationix/nvm>
 * Yeoman Webapp Generator: <https://github.com/yeoman/generator-webapp>
 
+## npm
+
+```bash
+# To scaffold or update your webapp
+yo webapp
+
+# To preview and watch for changes
+npm start
+
+# To build
+npm run build
+```
+
 ## Boilerplate
 
 ```html
