@@ -16,23 +16,34 @@ body {
 }
 
 .articles {
-  margin: 5rem 0;
-  margin-top: -200px;
+  margin-top: 0;
+  margin-bottom: 8rem;
+}
+
+@media (max-width: 1024px) {
+  .articles {
+    margin-top: -8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .articles {
+    margin-top: -2rem;
+  }
 }
 
 .articles .content p {
-  line-height: 1.9;
-  margin: 15px 0;
+  line-height: 1.6;
+  margin: 1rem 0;
 }
 
 .author-image {
   position: absolute;
-  top: -30px;
+  top: -60px;
   left: 50%;
-  width: 60px;
-  height: 60px;
-  margin-left: -30px;
-  border: 3px solid #ccc;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
   border-radius: 50%;
 }
 
@@ -84,6 +95,7 @@ div.column.is-8:first-child {
 
 .title--cphn {
   font-family: "Raleway", sans-serif;
+  color: #1B5E20;
 }
 
 .header--background {
@@ -97,13 +109,26 @@ div.column.is-8:first-child {
 .header--background img {
   margin: -30rem 0;
 }
+
 @media (max-width: 1024px) {
   .header--background img {
     margin: -15rem 0;
   }
 }
+
 @media (max-width: 768px) {
   .header--background img {
     margin: -13rem 0;
   }
+}
+
+.herbario--img {
+  float: left;
+  margin: 0.5rem 1rem 0 0;
+}
+
+.footer--centered {
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
