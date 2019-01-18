@@ -29,7 +29,7 @@ body {
 
 @media (max-width: 768px) {
   .articles {
-    margin-top: -2rem;
+    margin-top: -5rem;
   }
 }
 
@@ -46,6 +46,18 @@ body {
   height: 120px;
   margin-left: -60px;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .author-image {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    border-radius: 50%;
+  }
 }
 
 .media-center {
@@ -81,6 +93,13 @@ div.column.is-8:first-child {
 .article-body {
   line-height: 1.4;
   margin: 0 6rem;
+}
+
+@media (max-width: 768px) {
+  .article-body {
+    line-height: 1.4;
+    margin: 0 0.6rem;
+  }
 }
 
 .promo-block .container {
@@ -136,6 +155,7 @@ div.column.is-8:first-child {
 
 /* Bulma Carousel */
 
-.carousel-nav-left, .carousel-nav-right {
+.carousel-nav-left,
+.carousel-nav-right {
   cursor: pointer;
 }
