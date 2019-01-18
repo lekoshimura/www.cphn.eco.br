@@ -1,4 +1,4 @@
-// generated on 2019-01-15 using generator-webapp 4.0.0-1
+// generated on 2019-01-18 using generator-webapp 4.0.0-2
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -100,7 +100,7 @@ function measureSize() {
     .pipe($.size({title: 'build', gzip: true}));
 }
 
-let build = series(
+const build = series(
   parallel(
     lint,
     series(parallel(styles, scripts), html),
@@ -166,12 +166,15 @@ function startDistServer() {
   });
 }
 
+let serve;
 if (isDev) {
-  exports.serve = series(clean, parallel(styles, scripts, fonts), startAppServer);
+  serve = series(clean, parallel(styles, scripts, fonts), startAppServer);
 } else if (isTest) {
-  exports.serve = series(scripts, startTestServer);
+  serve = series(scripts, startTestServer);
 } else if (isProd) {
-  exports.serve = series(build, startDistServer);
+  serve = series(build, startDistServer);
 }
 
+exports.serve = serve;
+exports.build = build;
 exports.default = build;
