@@ -55,9 +55,55 @@
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
-  <link rel="stylesheet" href="node_modules/bulma-carousel/dist/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  <style>
+    .articles .content p {
+      line-height: 1.6;
+      margin: 1rem 0;
+    
+    }
+    .articles {
+      max-width: 960px;
+      margin-top: -6rem;
+      margin-bottom: 8rem;
+    }
+
+    @media (max-width: 1024px) {
+      .articles {
+        margin-top: -9rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .articles {
+        margin-top: -5rem;
+      }
+    }
+
+    .author-image {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      margin-left: -60px;
+      border-radius: 50%;
+      border: 1px solid gainsboro;
+    }
+
+    @media (max-width: 768px) {
+      .author-image {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin-left: -40px;
+        border-radius: 50%;
+      }
+    }
+</style>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -82,8 +128,11 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
+            <a class="navbar-item is-active" href="/">
               Home
+            </a>
+            <a class="navbar-item" href="galeria.html">
+              Fotos
             </a>
             <a class="navbar-item">
               Onde Estamos
@@ -154,8 +203,8 @@
           <p>A associação foi criada em São Paulo em 15 de agosto de 1950 sob a égide dos entusiastas imigrantes
             japoneses que desejavam criar uma entidade que propiciasse uma nova reflexão do ser humano através da sua
             relação com a natureza. A cerimônia de inauguração contou com a presença do ilustre professor
-            <a href="https://en.wikipedia.org/wiki/Hiroshi_Tamiya">Hiroshi Tamiya</a>, da Universidade de Tóquio e
-            representante oficial do Japão no V Congresso Internacional de Microbiologia em 1950.</p>
+            <a href="https://en.wikipedia.org/wiki/Hiroshi_Tamiya" target="_blank">Hiroshi Tamiya</a>, da Universidade
+            de Tóquio e representante oficial do Japão no V Congresso Internacional de Microbiologia em 1950.</p>
 
           <p>Ainda no clima nebuloso e tenso da comunidade nipo-brasileira do pós-guerra, os fundadores do CPHN viam
             na natureza brasileira a sua grande fonte de inspiração e ensinamento para o congraçamento com a
@@ -187,188 +236,6 @@
 
         </div><!-- content article-body -->
       </div><!-- .card-content -->
-    </article>
-
-    <article class="card article">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content has-text-centered">
-            <p class="title article-title">Galeria</p>
-          </div>
-        </div>
-        <div class="content article-body">
-          <div class='carousel carousel-animated carousel-animate-slide'>
-            <div class='carousel-container'>
-              <div class='carousel-item has-background is-active'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1985-pedra-grande-suzano-lg_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1985-pedra-grande-suzano-md_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1985-pedra-grande-suzano-sm_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1985-pedra-grande-suzano-lg_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1985-pedra-grande-suzano-md_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1985-pedra-grande-suzano-sm_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/1985-pedra-grande-suzano-lg_1x.jpg" type="image/jpeg"
-                    alt="1985-pedra-grande-suzano">
-                </picture>
-                <div class="title">1985: Pedra Grande, Suzano</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-md_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-sm_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-md_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-sm_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.jpg" type="image/jpeg"
-                    alt="1985-s-luis-do-paraitinga-sp">
-                </picture>
-                <div class="title">1985: São Luiz do Paraitinga</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.jpg"
-                    type="image/jpeg" alt="1986-abr-fazenda-tres-barras-alto-caparao">
-                </picture>
-                <div class="title">1986: Fazenda Três Barras, Alto Caparaó</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-md_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-sm_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-md_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-sm_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.jpg" type="image/jpeg"
-                    alt="1993-jun-fundacao-shunji-nishimura">
-                </picture>
-                <div class="title">1993: Fundação Shunji Nishimura, Amparo - SP</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1996-abr-faz-h-onoda-lg_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1996-abr-faz-h-onoda-md_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1996-abr-faz-h-onoda-sm_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1996-abr-faz-h-onoda-lg_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1996-abr-faz-h-onoda-md_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1996-abr-faz-h-onoda-sm_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-sm_2x.jpg 2x"
-                    type="image/jpg">
-                  <img src="images/carousel/1996-abr-faz-h-onoda-lg_1x.jpg" type="image/jpeg" alt="1996-abr-faz-h-onoda">
-                </picture>
-                <div class="title">1996: Fazenda H. Onoda</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_2x.jpg 2x"
-                    type="image/jpg">
-                  <img src="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.jpg" type="image/jpeg" alt="1997-mar-ao-fundo-a-pedra-do-bau">
-                </picture>
-                <div class="title">1999: Pedra do Baú</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-md_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-sm_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-md_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-sm_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.jpg" type="image/jpeg"
-                    alt="2001-abr-vila-de-maromba-rj">
-                </picture>
-                <div class="title">2001: Vila de Maromba, RJ</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-md_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-sm_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-md_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-sm_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.jpg" type="image/jpeg"
-                    alt="2001-fev-assembleia-geral-do-cphn">
-                </picture>
-                <div class="title">2001: Assembléia Geral do CPHN</div>
-              </div>
-              <div class='carousel-item has-background'>
-                <picture>
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-lg_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-md_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-md_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-sm_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-sm_2x.webp 2x"
-                    type="image/webp">
-                  <source media="(min-width: 1024px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-lg_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(min-width: 769px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-md_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-md_2x.jpg 2x"
-                    type="image/jpg">
-                  <source media="(max-width: 768px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-sm_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-sm_2x.jpg 2x"
-                    type="image/jpg"> <img src="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.jpg" type="image/jpeg"
-                    alt="2001-nov-h-f-s-francisco-cunha">
-                </picture>
-                <div class="title">2001: Fazenda São Francisco, Cunha</div>
-              </div>
-            </div>
-            <div class="carousel-navigation">
-              <div class="carousel-nav-left"><strong>&lt;</strong> Anterior</div>
-              <div class="carousel-nav-right">Pŕoximo <strong>&gt;</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </article>
 
     <article class="card article">
@@ -470,7 +337,6 @@
 
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
-  <script type="text/javascript" src="node_modules/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>

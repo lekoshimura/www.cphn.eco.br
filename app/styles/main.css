@@ -6,59 +6,9 @@ body {
   background: #F0F2F4;
 }
 
-.navbar.is-white {
-  background: #F0F2F4;
-}
-
 .navbar-brand .brand-text {
   font-size: 1.11rem;
   font-weight: bold;
-}
-
-.articles {
-  max-width: 960px;
-  margin-top: -6rem;
-  margin-bottom: 8rem;
-}
-
-@media (max-width: 1024px) {
-  .articles {
-    margin-top: -9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .articles {
-    margin-top: -5rem;
-  }
-}
-
-.articles .content p {
-  line-height: 1.6;
-  margin: 1rem 0;
-}
-
-.author-image {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  border-radius: 50%;
-  border: 1px solid gainsboro;
-}
-
-@media (max-width: 768px) {
-  .author-image {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    margin-left: -40px;
-    border-radius: 50%;
-  }
 }
 
 .media-center {
@@ -72,11 +22,6 @@ body {
 
 .article {
   margin-top: 6rem;
-}
-
-div.column.is-8:first-child {
-  padding-top: 0;
-  margin-top: 0;
 }
 
 .article-title {
@@ -197,17 +142,4 @@ div.column.is-8:first-child {
   .header--background img {
     margin: -13rem 0;
   }
-}
-
-.footer--centered {
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-
-/* Bulma Carousel */
-
-.carousel-nav-left,
-.carousel-nav-right {
-  cursor: pointer;
 }

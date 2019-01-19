@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104560120-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-104560120-4');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Galeria de Fotos do CPHN - Centro de Pesquisas de História Natural">
+  <meta name="author" content="Leonardo Eiji Koshimura">
+  <title>CPHN - Galeria de Fotos</title>
+
+  <!-- open graphics: facebook e whatsapp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cphn.eco.br/galeria.html" />
+  <meta property="og:title" content="Galeria de Fotos do CPHN - Centro de Pesquisas de História Natural">
+  <meta property="og:image:secure_url" content="https://www.cphn.eco.br/images/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logotipo do CPHN" />
+  <meta property="og:site_name" content="CPHN" />
+  <meta property="og:description" content="O CPHN é entidade privada sem fins lucrativos voltada à promoção do estudo e do contato de homem com a natureza." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galeria de Fotos do CPHN - Centro de Pesquisas de História Natural">
+  <meta name="twitter:image" content="https://www.cphn.eco.br/images/og-image.jpg" />
+
+  <!-- favicon   -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#1B5E20">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#1B5E20">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <style>
+    .main--margin-top {
+      margin-top: 60px;
+    }
+
+    .img--container {
+      margin-top: 60px;
+      position: relative;
+      max-width: 60vw;
+      margin: 60px auto;
+    }
+
+    @media (max-width: 1024px) {
+      .img--container {
+        max-width: 80vw;
+        margin: 40px auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .img--container {
+        max-width: 90vw;
+        margin: 30px auto;
+      }
+    }
+
+    .img--itself img {
+      display: block;
+    }
+
+    .img--text {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: rgba(255,255,255,.5);
+      z-index: 100;
+      padding: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }    
+  </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <header>
+    <!-- START NAV -->
+    <nav class="navbar is-fixed-top">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="images/logo-green.png" alt="Logotipo CPHN">
+            <spam class="header--logo-txt title--cphn">CPHN</spam>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="/">
+              Home
+            </a>
+            <a class="navbar-item is-active">
+              Fotos
+            </a>
+            <a class="navbar-item">
+              Onde Estamos
+            </a>
+            <a class="navbar-item">
+              Nossas Publicações
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAV -->
+  </header>
+
+  <main class="container container--margin-top">
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1985-pedra-grande-suzano-lg_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1985-pedra-grande-suzano-md_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1985-pedra-grande-suzano-sm_1x.webp 1x, images/carousel/1985-pedra-grande-suzano-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1985-pedra-grande-suzano-lg_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1985-pedra-grande-suzano-md_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1985-pedra-grande-suzano-sm_1x.jpg 1x, images/carousel/1985-pedra-grande-suzano-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/1985-pedra-grande-suzano-lg_1x.jpg" type="image/jpeg" alt="1985-pedra-grande-suzano">
+        </picture>
+      </figure>
+      <div class="img--text">1985: Pedra Grande, Suzano</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-md_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-sm_1x.webp 1x, images/carousel/1985-s-luis-do-paraitinga-sp-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-md_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1985-s-luis-do-paraitinga-sp-sm_1x.jpg 1x, images/carousel/1985-s-luis-do-paraitinga-sp-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/1985-s-luis-do-paraitinga-sp-lg_1x.jpg" type="image/jpeg" alt="1985-s-luis-do-paraitinga-sp">
+        </picture>
+      </figure>
+      <div class="img--text">1985: São Luiz do Paraitinga</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_1x.webp 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_1x.jpg 1x, images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/1986-abr-fazenda-tres-barras-alto-caparao-lg_1x.jpg" type="image/jpeg"
+            alt="1986-abr-fazenda-tres-barras-alto-caparao">
+        </picture>
+      </figure>
+      <div class="img--text">1986: Fazenda Três Barras, Alto Caparaó</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-md_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-sm_1x.webp 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-md_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1993-jun-fundacao-shunji-nishimura-sm_1x.jpg 1x, images/carousel/1993-jun-fundacao-shunji-nishimura-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/1993-jun-fundacao-shunji-nishimura-lg_1x.jpg" type="image/jpeg"
+            alt="1993-jun-fundacao-shunji-nishimura">
+        </picture>
+      </figure>
+      <div class="img--text">1993: Fundação Shunji Nishimura, Amparo - SP</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1996-abr-faz-h-onoda-lg_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1996-abr-faz-h-onoda-md_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1996-abr-faz-h-onoda-sm_1x.webp 1x, images/carousel/1996-abr-faz-h-onoda-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1996-abr-faz-h-onoda-lg_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1996-abr-faz-h-onoda-md_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1996-abr-faz-h-onoda-sm_1x.jpg 1x, images/carousel/1996-abr-faz-h-onoda-sm_2x.jpg 2x"
+            type="image/jpg">
+          <img src="images/carousel/1996-abr-faz-h-onoda-lg_1x.jpg" type="image/jpeg" alt="1996-abr-faz-h-onoda">
+        </picture>
+      </figure>
+      <div class="img--text">1996: Fazenda H. Onoda</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_1x.webp 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_1x.jpg 1x, images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-sm_2x.jpg 2x"
+            type="image/jpg">
+          <img src="images/carousel/1997-mar-ao-fundo-a-pedra-do-bau-lg_1x.jpg" type="image/jpeg" alt="1997-mar-ao-fundo-a-pedra-do-bau">
+        </picture>
+      </figure>
+      <div class="img--text">1999: Pedra do Baú</div>
+    </article>
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-md_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-sm_1x.webp 1x, images/carousel/2001-abr-vila-de-maromba-rj-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-md_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-abr-vila-de-maromba-rj-sm_1x.jpg 1x, images/carousel/2001-abr-vila-de-maromba-rj-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/2001-abr-vila-de-maromba-rj-lg_1x.jpg" type="image/jpeg" alt="2001-abr-vila-de-maromba-rj">
+        </picture>
+      </figure>
+      <div class="img--text">2001: Vila de Maromba, RJ</div>
+    </article>
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-md_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-sm_1x.webp 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-md_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-fev-assembleia-geral-do-cphn-sm_1x.jpg 1x, images/carousel/2001-fev-assembleia-geral-do-cphn-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/2001-fev-assembleia-geral-do-cphn-lg_1x.jpg" type="image/jpeg"
+            alt="2001-fev-assembleia-geral-do-cphn">
+        </picture>
+      </figure>
+      <div class="img--text">2001: Assembléia Geral do CPHN</div>
+    </article>
+
+    <article class="img--container">
+      <figure class="img--itself">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-md_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-sm_1x.webp 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-md_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/carousel/2001-nov-h-f-s-francisco-cunha-sm_1x.jpg 1x, images/carousel/2001-nov-h-f-s-francisco-cunha-sm_2x.jpg 2x"
+            type="image/jpg"> <img src="images/carousel/2001-nov-h-f-s-francisco-cunha-lg_1x.jpg" type="image/jpeg" alt="2001-nov-h-f-s-francisco-cunha">
+        </picture>
+      </figure>
+      <div class="img--text">2001: Fazenda São Francisco, Cunha</div>
+    </article>
+
+  </main>
+
+  <!-- build:js scripts/vendor.js -->
+
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+
+</body>
+
+</html>

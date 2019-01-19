@@ -4,8 +4,7 @@
     "node": ">=4"
   },
   "dependencies": {
-    "bulma": "^0.7.2",
-    "bulma-carousel": "^3.0.0"
+    "bulma": "^0.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
