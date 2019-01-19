@@ -46,6 +46,7 @@ body {
   height: 120px;
   margin-left: -60px;
   border-radius: 50%;
+  border: 1px solid gainsboro;
 }
 
 @media (max-width: 768px) {
@@ -108,8 +109,29 @@ div.column.is-8:first-child {
 /* CPHN */
 
 .header--logo-txt {
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
+  margin-left: 5px;
+}
+
+.hero--title--top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero--title--top img {
+  margin-right: 1rem;
+}
+
+.hero--title--bottom {
+  text-align: center;
+  border-top: 1px solid white;
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+}
+
+.hero--title--logo {
+  width: 128px;
+  height: 128px;
 }
 
 .title--cphn {
@@ -119,18 +141,23 @@ div.column.is-8:first-child {
 }
 
 .title--cphn--big {
-  font-size: 5rem;
+  font-size: 7rem;
 }
 
 .subtitle--cphn--big {
   font-family: "Raleway", sans-serif;
   font-weight: thin;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 1024px) {
+  .hero--title--logo {
+    width: 96px;
+    height: 96px;
+  }
+  
   .title--cphn--big {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 
   .subtitle--cphn--big {
@@ -170,11 +197,6 @@ div.column.is-8:first-child {
   .header--background img {
     margin: -13rem 0;
   }
-}
-
-.herbario--img {
-  float: left;
-  margin: 0.5rem 1rem 0 0;
 }
 
 .footer--centered {

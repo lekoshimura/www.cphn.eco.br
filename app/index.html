@@ -52,7 +52,7 @@
   <meta name="msapplication-TileColor" content="#1B5E20">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#1B5E20">
-  
+
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="node_modules/bulma-carousel/dist/css/bulma-carousel.min.css">
@@ -117,9 +117,14 @@
     <!-- END BACKGROUND -->
     <section class="hero is-medium is-bold">
       <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title title--cphn title--cphn--big has-text-white">CPHN</h1>
-          <h2 class="subtitle subtitle--cphn--big has-text-white">Centro de Pesquisas de História Natural</h2>
+        <div class="container hero--title">
+          <div class="hero--title--top">
+            <img class="image hero--title--logo" src="images/logo-white.png" alt="Logotipo CPHN">
+            <h1 class="title title--cphn title--cphn--big has-text-white">CPHN</h1>
+          </div>
+          <div class="hero--title--bottom">
+            <h2 class="subtitle subtitle--cphn--big has-text-white">Centro de Pesquisas de História Natural</h2>
+          </div>
         </div>
       </div>
     </section>
@@ -130,15 +135,15 @@
       <div class="card-content">
         <div class="media">
           <div class="media-center">
-            <img src="images/logo-green.png" class="author-image" alt="Logotipo CPHN">
+            <img src="images/titles/quem-somos-nos-elza.jpg" class="author-image" alt="Quem Somos Nós">
           </div>
           <div class="media-content has-text-centered">
             <p class="title article-title">Quem Somos Nós?</p>
           </div>
         </div>
         <div class="content article-body">
-          <p>O <dfn><abbr title="Centro de Pesquisas de História Natural">CPHN</abbr></dfn> é entidade privada sem fins
-            lucrativos voltada à promoção do estudo e do contato de homem com a natureza. A composição de nossos
+          <p>O <dfn><abbr title="Centro de Pesquisas de História Natural">CPHN</abbr></dfn> é uma entidade privada sem
+            fins lucrativos voltada à promoção do estudo e do contato de homem com a natureza. A composição de nossos
             filiados é bastante heterogênea. Somos botânicos, arquitetos, médicos, donas-de-casa, executivos,
             professores, estudantes, aposentados, etc. Enfim, o elo da união não é a profissão, mas sim, o gosto pelos
             diversos aspectos da natureza. A participação é aberta para todos.</p>
@@ -148,9 +153,9 @@
 
           <p>A associação foi criada em São Paulo em 15 de agosto de 1950 sob a égide dos entusiastas imigrantes
             japoneses que desejavam criar uma entidade que propiciasse uma nova reflexão do ser humano através da sua
-            relação com a natureza. A cerimônia de inauguração contou com a presença do ilustre Hiroshi Tamiya,
-            professor da Universidade de Tóquio e representante oficial do Japão no V Congresso Internacional de
-            Microbiologia em 1950.</p>
+            relação com a natureza. A cerimônia de inauguração contou com a presença do ilustre professor
+            <a href="https://en.wikipedia.org/wiki/Hiroshi_Tamiya">Hiroshi Tamiya</a>, da Universidade de Tóquio e
+            representante oficial do Japão no V Congresso Internacional de Microbiologia em 1950.</p>
 
           <p>Ainda no clima nebuloso e tenso da comunidade nipo-brasileira do pós-guerra, os fundadores do CPHN viam
             na natureza brasileira a sua grande fonte de inspiração e ensinamento para o congraçamento com a
@@ -161,17 +166,20 @@
 
           <ul>
             <li>Promover estudos junto à natureza, abrangendo os reinos animal, vegetal e mineral; </li>
-            <li>Aprofundar o conhecimento, a compreensão e o sentimento de respeito pela natureza que nos cerca. </li>
+            <li>Aprofundar o conhecimento, a compreensão e o sentimento de respeito pela natureza que nos cerca.
+            </li>
             <li>Buscar a familiarização do homem com a história natural, visando conscientizá-lo do valor da
               natureza; e,</li>
             <li>Cultivar o espírito de preservação do meio ambiente.</li>
           </ul>
 
           <p>Ao longo deste período, o CPHN vem realizando atividades voltadas à Botânica com atenção especial na
-            área de taxonomia vegetal através da orientação do botânico Goro Hashimoto, fundador do CPHN e atualmente
+            área de taxonomia vegetal através da orientação do botânico Goro Hashimoto, fundador do CPHN e
+            atualmente
             seu consultor. Já realizamos cerca de 100 expedições e viagens de observação, coleta e identificação de
             plantas de diversas regiões do Brasil. A entidade conta atualmente com um acervo de mais de 150.000
-            exemplares de plantas herborizadas que estão disponíveis no Herbário Goro Hashimoto, localizado em nossa
+            exemplares de plantas herborizadas que estão disponíveis no Herbário Goro Hashimoto, localizado em
+            nossa
             sede.</p>
 
           <p>Anualmente são programadas viagens de estudo para diferentes regiões para coleta de plantas,
@@ -366,8 +374,11 @@
     <article class="card article">
       <div class="card-content">
         <div class="media">
+          <div class="media-center">
+            <img src="images/titles/goro-brasilia.jpg" class="author-image" alt="Professor Goro Hashimoto">
+          </div>
           <div class="media-content has-text-centered">
-            <p class="title article-title">Goro Hashimoto</p>
+            <p class="title article-title">Professor Goro Hashimoto</p>
           </div>
         </div>
         <div class="content article-body">
@@ -384,7 +395,7 @@
               type="image/jpg">
             <source media="(max-width: 768px)" srcset="images/goro/goro-sm_1x.jpg 1x, images/goro/goro-sm_2x.jpg 2x"
               type="image/jpg">
-            <img src="images/goro/goro-lg_1x.jpg" type="image/jpeg" alt="Goro Hashimoro">
+            <img src="images/goro/goro-lg_1x.jpg" type="image/jpeg" alt="Goro Hashimoto">
           </picture>
 
           <p>A alma do CPHN é o botânico <dfn>Goro Hashimoto</dfn>, especializado em taxonomia vegetal. Amante das
@@ -403,13 +414,14 @@
     <article class="card article">
       <div class="card-content">
         <div class="media">
+          <div class="media-center">
+            <img src="images/titles/herbario.jpg" class="author-image" alt="Herbário Goro Hashimoto">
+          </div>
           <div class="media-content has-text-centered">
             <p class="title article-title">Nosso Herbário</p>
           </div>
         </div>
         <div class="content article-body">
-          <img class="herbario--img" src="images/herbario.jpg" width="400" height="169" />
-
           <p>O <dfn>Herbário Goro Hashimoto</dfn> constitui-se certamente num dos maiores acervos de plantas
             herborizadas, em se tratando de entidade privada. A sua criação foi um sonho acalentado por quatro décadas
             e começou a materializar-se em 1992 com a doação de um terreno de 2.100m<sup>2</sup> por parte do casal
@@ -453,13 +465,6 @@
       </div><!-- .card-content -->
     </article>
   </main>
-
-  <footer class="footer">
-    <div class="footer--centered">
-      <img class="image is-32x32" src="images/logo-green.png" alt="Logotipo CPHN">
-      <spam class="header--logo-txt title--cphn">CPHN</spam>
-    </div>
-  </footer>
 
   <!-- build:js scripts/vendor.js -->
 
