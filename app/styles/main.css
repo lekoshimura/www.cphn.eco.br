@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:800|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400|Roboto');
 
 html,
 body {
@@ -115,7 +115,7 @@ div.column.is-8:first-child {
 .title--cphn {
   font-family: "Raleway", sans-serif;
   color: #1B5E20;
-  font-weight: 600;
+  font-weight: 100;
 }
 
 .title--cphn--big {
@@ -123,6 +123,8 @@ div.column.is-8:first-child {
 }
 
 .subtitle--cphn--big {
+  font-family: "Raleway", sans-serif;
+  font-weight: thin;
   font-size: 2rem;
 }
 
