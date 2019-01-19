@@ -33,7 +33,7 @@ function doit {
   convert $1.jpg -quality $MEDIUM -resize 1538 output/$1-sm_2x.webp
   convert $1.jpg -quality $MEDIUM -resize 1280 output/$1-lg_1x.webp
   convert $1.jpg -quality $MEDIUM -resize 1024 output/$1-md_1x.webp
-  convert $1.jpg -quality $MEDIUM -resize 769  output/goro-sm_1x.webp
+  convert $1.jpg -quality $MEDIUM -resize 769  output/$1-sm_1x.webp
 
   echo "<picture> \
   <source media=\"(min-width: 1024px)\" srcset=\"images/carousel/$1-lg_1x.webp 1x, images/carousel/$1-lg_2x.webp 2x\" type=\"image/webp\"> \
