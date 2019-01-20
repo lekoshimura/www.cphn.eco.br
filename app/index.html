@@ -132,6 +132,12 @@
       }
     }
 
+    .article--with-shadow {
+      -webkit-box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);
+      -moz-box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);
+      box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);
+    }
+
     .author-image {
       position: absolute;
       top: -60px;
@@ -141,6 +147,9 @@
       margin-left: -60px;
       border-radius: 50%;
       border: 1px solid gainsboro;
+      -webkit-box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);
+      -moz-box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);
+      box-shadow: 10px 10px 70px -20px rgba(32,58,36,1);      
     }
 
     @media (max-width: 768px) {
@@ -164,7 +173,7 @@
 
   <header>
     <!-- START NAV -->
-    <nav class="navbar navbar--transparent-background">
+    <nav class="navbar navbar--green-background">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="../">
@@ -223,7 +232,7 @@
   </header>
 
   <main class="container articles">
-    <article class="card article">
+    <article class="card article article--with-shadow">
       <div class="card-content">
         <div class="media">
           <div class="media-center">
@@ -281,7 +290,7 @@
       </div><!-- .card-content -->
     </article>
 
-    <article class="card article">
+    <article class="card article article--with-shadow">
       <div class="card-content">
         <div class="media">
           <div class="media-center">
@@ -321,7 +330,7 @@
       </div><!-- .card-content -->
     </article>
 
-    <article class="card article">
+    <article class="card article article--with-shadow">
       <div class="card-content">
         <div class="media">
           <div class="media-center">
