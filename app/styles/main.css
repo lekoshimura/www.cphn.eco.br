@@ -1,12 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
   background: #F0F2F4;
 }
 
-.navbar-brand .brand-text {
+img {
+  display: block;
+}
+
+.navbar--transparent-background {
+  background-color: rgb(32, 58, 36);
+}
+
+a.navbar-item {
+  border-bottom: 4px solid transparent;
+}
+
+a.navbar-item.is-active {
+  font-weight: bold;
+  border-bottom: 4px solid white;
+}
+
+a.navbar-item:hover {
+  /* #1B5E20 */
+  /* #203A24 */
+  background: rgba(27, 94, 32, 0.6); 
+  border-bottom: 4px solid #164f1b;
+}
+
+.navbar-brand {
   font-size: 1.11rem;
   font-weight: bold;
 }
@@ -57,89 +80,10 @@ body {
   margin-left: 5px;
 }
 
-.hero--title--top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero--title--top img {
-  margin-right: 1rem;
-}
-
-.hero--title--bottom {
-  text-align: center;
-  border-top: 1px solid white;
-  margin-top: 1rem;
-  padding-top: 0.6rem;
-}
-
-.hero--title--logo {
-  width: 128px;
-  height: 128px;
-}
-
 .title--cphn {
   font-family: "Raleway", sans-serif;
-  color: #1B5E20;
+  /* color: #1B5E20; */
+  color: white;
   font-weight: 100;
-}
-
-.title--cphn--big {
-  font-size: 7rem;
-}
-
-.subtitle--cphn--big {
-  font-family: "Raleway", sans-serif;
-  font-weight: thin;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 1024px) {
-  .hero--title--logo {
-    width: 96px;
-    height: 96px;
-  }
-  
-  .title--cphn--big {
-    font-size: 6rem;
-  }
-
-  .subtitle--cphn--big {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .title--cphn--big {
-    font-size: 3rem;
-  }
-
-  .subtitle--cphn--big {
-    font-size: 1rem;
-  }
-}
-
-.header--background {
-  position: absolute;
-  left: 0;
-  width: 100vw;
-  height: 50rem;
-  overflow: hidden;
-}
-
-.header--background img {
-  margin: -30rem 0;
-}
-
-@media (max-width: 1024px) {
-  .header--background img {
-    margin: -15rem 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .header--background img {
-    margin: -13rem 0;
-  }
+  font-size: 1.8rem;
 }

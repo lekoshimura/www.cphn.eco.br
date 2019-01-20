@@ -49,35 +49,86 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#1B5E20">
+  <meta name="msapplication-TileColor" content="#203A24">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#1B5E20">
+  <meta name="theme-color" content="#203A24">
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
   <style>
+   .header--container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media screen and (orientation:portrait) {
+      .header--container {
+        max-width: 100vw;
+      }
+    }
+
+    @media screen and (orientation:landscape) {
+      .header--container {
+        max-height: 90vh;
+      }
+    }
+
+    .hero--title--bottom {
+      position: absolute;
+      left: 0;
+      top: 30%;
+      z-index: 100;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .subtitle--cphn--big {
+      font-family: "Raleway", sans-serif;
+      font-weight: thin;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      border-bottom: 1px solid white;
+      max-width: 960px;
+      width: 66%;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+      .subtitle--cphn--big {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .subtitle--cphn--big {
+        font-size: 1.2rem;
+      }
+    }    
+
     .articles .content p {
       line-height: 1.6;
       margin: 1rem 0;
-    
     }
+
     .articles {
       max-width: 960px;
-      margin-top: -6rem;
+      margin-top: -12rem;
       margin-bottom: 8rem;
     }
 
     @media (max-width: 1024px) {
       .articles {
-        margin-top: -9rem;
+        margin-top: -22vh;
       }
     }
 
     @media (max-width: 768px) {
       .articles {
-        margin-top: -5rem;
+        margin-top: -28vw;
       }
     }
 
@@ -106,18 +157,18 @@
 </style>
 </head>
 
-<body class="has-navbar-fixed-top">
+<body>
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
   <header>
     <!-- START NAV -->
-    <nav class="navbar is-fixed-top">
+    <nav class="navbar navbar--transparent-background">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="../">
-            <img src="images/logo-green.png" alt="Logotipo CPHN">
+            <img src="images/logo-white.png" alt="Logotipo CPHN">
             <spam class="header--logo-txt title--cphn">CPHN</spam>
           </a>
           <span class="navbar-burger burger" data-target="navbarMenu">
@@ -128,16 +179,16 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active" href="/">
+            <a class="navbar-item has-text-white is-active" href="/">
               Home
             </a>
-            <a class="navbar-item" href="galeria.html">
+            <a class="navbar-item has-text-white" href="galeria.html">
               Fotos
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-text-white">
               Onde Estamos
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-text-white">
               Nossas Publicações
             </a>
           </div>
@@ -146,37 +197,29 @@
     </nav>
     <!-- END NAV -->
     <!-- START BACKGROUND -->
-    <div class="header--background">
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.webp 1x, images/banner/banner-lg_2x.webp 2x"
-          type="image/webp">
-        <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.webp 1x, images/banner/banner-md_2x.webp 2x"
-          type="image/webp">
-        <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.webp 1x, images/banner/banner-sm_2x.webp 2x"
-          type="image/webp">
-        <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.jpg 1x, images/banner/banner-lg_2x.jpg 2x"
-          type="image/jpg">
-        <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.jpg 1x, images/banner/banner-md_2x.jpg 2x"
-          type="image/jpg">
-        <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.jpg 1x, images/banner/banner-sm_2x.jpg 2x"
-          type="image/jpg">
-        <img src="images/banner/banner-lg_1x.jpg" type="image/jpeg" alt="Expedição Pedra Grande">
-      </picture>
+    <div class="header--container">
+      <figure>
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.webp 1x, images/banner/banner-lg_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.webp 1x, images/banner/banner-md_2x.webp 2x"
+            type="image/webp">
+          <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.webp 1x, images/banner/banner-sm_2x.webp 2x"
+            type="image/webp">
+          <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.jpg 1x, images/banner/banner-lg_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.jpg 1x, images/banner/banner-md_2x.jpg 2x"
+            type="image/jpg">
+          <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.jpg 1x, images/banner/banner-sm_2x.jpg 2x"
+            type="image/jpg">
+          <img src="images/banner/banner-lg_1x.jpg" type="image/jpeg" alt="Expedição Pedra Grande">
+        </picture>
+      </figure>
+      <div class="hero--title--bottom">
+        <h2 class="subtitle subtitle--cphn--big has-text-white">Centro de Pesquisas de História Natural</h2>
+      </div>
     </div>
     <!-- END BACKGROUND -->
-    <section class="hero is-medium is-bold">
-      <div class="hero-body">
-        <div class="container hero--title">
-          <div class="hero--title--top">
-            <img class="image hero--title--logo" src="images/logo-white.png" alt="Logotipo CPHN">
-            <h1 class="title title--cphn title--cphn--big has-text-white">CPHN</h1>
-          </div>
-          <div class="hero--title--bottom">
-            <h2 class="subtitle subtitle--cphn--big has-text-white">Centro de Pesquisas de História Natural</h2>
-          </div>
-        </div>
-      </div>
-    </section>
   </header>
 
   <main class="container articles">
