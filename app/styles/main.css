@@ -6,6 +6,9 @@ img {
 
 .navbar--green-background {
   background-color: rgb(32, 58, 36);
+}
+
+.navbar--with-shadow {
   -webkit-box-shadow: 10px 10px 70px -20px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 70px -20px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 70px -20px rgba(0,0,0,0.75);  
@@ -18,6 +21,7 @@ a.navbar-item {
 a.navbar-item.is-active {
   font-weight: bold;
   border-bottom: 4px solid white;
+  background-color: #164f1b;
 }
 
 a.navbar-item:hover {
