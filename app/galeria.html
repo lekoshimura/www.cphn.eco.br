@@ -70,23 +70,22 @@
     }
 
     .img--container {
-      margin-top: 60px;
       position: relative;
       max-width: 60vw;
-      margin: 60px auto;
+      margin: 160px auto;
     }
 
     @media (max-width: 1024px) {
       .img--container {
         max-width: 80vw;
-        margin: 40px auto;
+        margin: 140px auto;
       }
     }
 
     @media (max-width: 768px) {
       .img--container {
         max-width: 90vw;
-        margin: 30px auto;
+        margin: 120px auto;
       }
     }
 
@@ -114,37 +113,37 @@
 
   <header>
     <!-- START NAV -->
-    <nav class="navbar navbar--green-background">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="../">
-              <img src="images/logo-white.png" alt="Logotipo CPHN">
-              <spam class="header--logo-txt title--cphn">CPHN</spam>
+    <nav class="navbar is-fixed-top navbar--green-background navbar--with-shadow">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="images/logo-white.png" alt="Logotipo CPHN">
+            <spam class="header--logo-txt title--cphn">CPHN</spam>
+          </a>
+          <span class="navbar-burger burger has-text-white" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu navbar--green-background">
+          <div class="navbar-end">
+            <a class="navbar-item has-text-white" href="/">
+              Home
             </a>
-            <span class="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item has-text-white" href="/">
-                Home
-              </a>
-              <a class="navbar-item has-text-white is-active" href="galeria.html">
-                Fotos
-              </a>
-              <a class="navbar-item has-text-white">
-                Onde Estamos
-              </a>
-              <a class="navbar-item has-text-white">
-                Nossas Publicações
-              </a>
-            </div>
+            <a class="navbar-item has-text-white is-active" href="galeria.html">
+              Fotos
+            </a>
+            <a class="navbar-item has-text-white">
+              Onde Estamos
+            </a>
+            <a class="navbar-item has-text-white">
+              Nossas Publicações
+            </a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
     <!-- END NAV -->
   </header>
 
