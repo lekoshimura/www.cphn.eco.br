@@ -71,41 +71,72 @@
 
     @media screen and (orientation:landscape) {
       .header--container {
-        max-height: 90vh;
+        max-height: 100vh;
       }
     }
 
-    .hero--title--bottom {
+    .header--titles {
       position: absolute;
       left: 0;
-      top: 30%;
-      z-index: 100;
       width: 100%;
-      text-align: center;
-      padding: 1rem;
+      height: 100%;
+      top: 18%;
     }
 
-    .subtitle--cphn--big {
+    .header--title--top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header--logo {
+      width: 120px;
+      height: 120px;
+      margin-right: 1rem;
+    }
+
+    .header--title--big {
+      font-family: 'Raleway';
+      font-size: 6.7rem;
+      font-weight: 100;
+    }
+
+    .header--title--bottom {
       font-family: "Raleway", sans-serif;
-      font-weight: thin;
-      font-size: 1.5rem;
-      line-height: 2.2rem;
-      border-bottom: 1px solid white;
-      max-width: 960px;
+      text-align: center;
+      font-weight: 100;
       width: 66%;
-      margin: 0 auto;
-      line-height: 1.4;
+      border-top: 1px solid white;
+      margin: 0.4rem auto;
+      color: white;
+      font-size: 1.9rem;
     }
 
     @media (max-width: 1024px) {
-      .subtitle--cphn--big {
-        font-size: 1.8rem;
+      .header--logo {
+        width: 100px;
+        height: 100px;
+        margin-right: 1rem;
+      }
+      .header--title--big {
+        font-size: 5.6rem;
+      }
+      .header--title--bottom {
+        font-size: 1.6rem;
       }
     }
 
     @media (max-width: 768px) {
-      .subtitle--cphn--big {
-        font-size: 1.2rem;
+      .header--logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 0.5rem;
+      }
+      .header--title--big {
+        font-size: 2.8rem;
+      }
+      .header--title--bottom {
+        font-size: 0.8rem;
       }
     }    
 
@@ -269,25 +300,33 @@
     <!-- END NAV -->
     <!-- START BACKGROUND -->
     <div class="header--container">
-      <figure>
-        <picture>
-          <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.webp 1x, images/banner/banner-lg_2x.webp 2x"
-            type="image/webp">
-          <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.webp 1x, images/banner/banner-md_2x.webp 2x"
-            type="image/webp">
-          <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.webp 1x, images/banner/banner-sm_2x.webp 2x"
-            type="image/webp">
-          <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.jpg 1x, images/banner/banner-lg_2x.jpg 2x"
-            type="image/jpg">
-          <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.jpg 1x, images/banner/banner-md_2x.jpg 2x"
-            type="image/jpg">
-          <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.jpg 1x, images/banner/banner-sm_2x.jpg 2x"
-            type="image/jpg">
-          <img src="images/banner/banner-lg_1x.jpg" type="image/jpeg" alt="Expedição Pedra Grande">
-        </picture>
-      </figure>
-      <div class="hero--title--bottom">
-        <h2 class="subtitle subtitle--cphn--big has-text-white">Centro de Pesquisas de História Natural</h2>
+      <div class="header--background">
+        <figure>
+          <picture>
+            <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.webp 1x, images/banner/banner-lg_2x.webp 2x"
+              type="image/webp">
+            <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.webp 1x, images/banner/banner-md_2x.webp 2x"
+              type="image/webp">
+            <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.webp 1x, images/banner/banner-sm_2x.webp 2x"
+              type="image/webp">
+            <source media="(min-width: 1024px)" srcset="images/banner/banner-lg_1x.jpg 1x, images/banner/banner-lg_2x.jpg 2x"
+              type="image/jpg">
+            <source media="(min-width: 769px)" srcset="images/banner/banner-md_1x.jpg 1x, images/banner/banner-md_2x.jpg 2x"
+              type="image/jpg">
+            <source media="(max-width: 768px)" srcset="images/banner/banner-sm_1x.jpg 1x, images/banner/banner-sm_2x.jpg 2x"
+              type="image/jpg">
+            <img src="images/banner/banner-lg_1x.jpg" type="image/jpeg" alt="Expedição Pedra Grande">
+          </picture>
+        </figure>
+      </div>
+      <div class="header--titles">
+        <div class="header--title--top">
+          <img class="image header--logo" src="images/logo-white.png" alt="Logotipo CPHN">
+          <h1 class="title has-text-white header--title--big">CPHN</h1>
+        </div>
+        <div class="header--title--bottom header--subtitle--big">
+          Centro de Pesquisas de História Natural
+        </div>
       </div>
     </div>
     <!-- END BACKGROUND -->
@@ -467,16 +506,19 @@
         observer = new IntersectionObserver(handleIntersect, options);
         observer.observe(elementToWatch);
       };
+
       function handleIntersect(entries, observer) {
         entries.forEach(function (entry) {
           entry.intersectionRatio > 0 ? hideNavbar() : showNavbar();
         });
       };
+
       function showNavbar() {
         navbar.classList.remove('is-hidden');
         navbar.classList.remove('fade-out-top');
         navbar.classList.add('fade-in-top');
       };
+
       function hideNavbar() {
         navbar.classList.remove('fade-in-top');
         navbar.classList.add('fade-out-top');
@@ -485,6 +527,7 @@
         createObserver('.header--container');
       }, false);
     });
+
   </script>
 </body>
 
