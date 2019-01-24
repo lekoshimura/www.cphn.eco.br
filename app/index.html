@@ -87,20 +87,20 @@
       width: 120px;
       height: 120px;
       margin-right: 1rem;
+      border-radius: 50%;
     }
 
     .header--title--big {
       font-size: 6.7rem;
-      font-weight: 100;
     }
 
     .header--title--bottom {
       text-align: center;
-      font-weight: 100;
+      font-weight: 400;
       width: 66%;
-      border-top: 1px solid white;
+      border-top: 1px solid #1F6B24;
       margin: 0.4rem auto;
-      color: white;
+      color: #1F6B24;
       font-size: 1.9rem;
     }
 
@@ -130,7 +130,7 @@
       .header--title--bottom {
         font-size: 0.8rem;
       }
-    }    
+    }
 
     .articles {
       max-width: 960px;
@@ -314,7 +314,7 @@
         <div class="navbar-brand">
           <a class="navbar-item" href="../">
             <img src="images/logo-white.png" alt="Logotipo CPHN">
-            <spam class="header--logo-txt title--cphn">CPHN</spam>
+            <spam class="header--logo-txt has-text-white title--cphn">CPHN</spam>
           </a>
           <span class="navbar-burger burger has-text-white" data-target="navbarMenu">
             <span></span>
@@ -364,8 +364,8 @@
       </div>
       <div class="header--titles">
         <div class="header--title--top">
-          <img class="image header--logo" src="images/logo-white.png" alt="Logotipo CPHN">
-          <h1 class="title has-text-white header--title--big title--cphn">CPHN</h1>
+          <img class="image header--logo" src="images/logo-green.png" alt="Logotipo CPHN">
+          <h1 class="title header--title--big title--cphn">CPHN</h1>
         </div>
         <div class="header--title--bottom header--subtitle--big title--cphn">
           Centro de Pesquisas de História Natural
@@ -997,15 +997,15 @@
 
       function sharpBanner() {
         if (!firstPaint) {
-          headerBackground.classList.remove('blur-brightness-etc');
-          headerBackground.classList.add('unblur-unbrightness-etc');
+          // headerBackground.classList.remove('blur-brightness-etc');
+          // headerBackground.classList.add('unblur-unbrightness-etc');
         }
         firstPaint = false;
       };
 
       function blurBanner() {
-        headerBackground.classList.remove('unblur-unbrightness-etc');
-        headerBackground.classList.add('blur-brightness-etc');
+        // headerBackground.classList.remove('unblur-unbrightness-etc');
+        // headerBackground.classList.add('blur-brightness-etc');
       };
 
       // createObserver para headerBackground
@@ -1031,9 +1031,7 @@
     }
     gtag('js', new Date());
     gtag('config', 'UA-104560120-4');
-
   </script>
-
 </body>
 
 </html>
