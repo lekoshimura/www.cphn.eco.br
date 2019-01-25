@@ -39,3 +39,20 @@ npm run build
   </div><!-- .card-content -->
 </article>
 ```
+
+http://jsfiddle.net/lekoshimura/s9mnLowd/2/
+https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
+
+https://github.com/addyosmani/critical
+
+https://github.com/mozilla/mozjpeg
+
+https://gist.github.com/waako/7749acd10affac02782b6b0992ca83f8
+
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/#lazy-load-non-critical-images
+https://github.com/aFarkas/lazysizes
+
+https://www.google.com/permissions/products/
+https://www.google.com/permissions/geoguidelines/
+
+https://goo.gl/maps/e49Mh4RFsA52
