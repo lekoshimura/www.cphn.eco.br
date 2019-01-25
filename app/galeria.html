@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104560120-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-104560120-4');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Galeria de Fotos do CPHN - Centro de Pesquisas de História Natural">
@@ -66,10 +58,6 @@
       box-shadow: 10px 10px 70px -20px rgba(0,0,0,0.75);
     }
 
-    .main--margin-top {
-      margin-top: 60px;
-    }
-
     .img--container {
       position: relative;
       max-width: 60vw;
@@ -103,7 +91,7 @@
       padding: 0.5rem;
       width: 100%;
       text-align: center;
-    }    
+    }
   </style>
 </head>
 
@@ -135,7 +123,7 @@
             <a class="navbar-item has-text-white is-active" href="galeria.html">
               Fotos
             </a>
-            <a class="navbar-item has-text-white">
+            <a class="navbar-item has-text-white" href="onde-estamos.html">
               Onde Estamos
             </a>
             <a class="navbar-item has-text-white">
@@ -148,7 +136,7 @@
     <!-- END NAV -->
   </header>
 
-  <main class="container container--margin-top">
+  <main class="container">
     <article class="img--container">
       <figure class="img--itself">
         <picture>
@@ -340,6 +328,16 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104560120-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-104560120-4');
+  </script>
 
 </body>
 

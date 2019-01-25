@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CPHN - Onde Estamos">
+  <meta name="author" content="Leonardo Eiji Koshimura">
+  <title>CPHN - Onde Estamos</title>
+
+  <!-- open graphics: facebook e whatsapp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cphn.eco.br/galeria.html" />
+  <meta property="og:title" content="CPHN - Onde Estamos">
+  <meta property="og:image:secure_url" content="https://www.cphn.eco.br/images/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logotipo do CPHN" />
+  <meta property="og:site_name" content="CPHN" />
+  <meta property="og:description" content="O CPHN é entidade privada sem fins lucrativos voltada à promoção do estudo e do contato de homem com a natureza." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CPHN - Onde Estamos">
+  <meta name="twitter:image" content="https://www.cphn.eco.br/images/og-image.jpg" />
+
+  <!-- favicon   -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#203A24">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#203A24">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <style>
+    .mapa {
+      position: relative;
+      margin: 0;
+      margin-top: 52px;
+      height: calc(100vh - 52px);
+      width: 100vw;
+      display: flex;
+    }
+
+    .mapa--esquerdo {
+      background-color: red;
+      flex: 1 1 auto;
+    }
+
+    .mapa--direito {
+      background-color: yellow;
+      flex: 1 1 auto;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <header>
+    <!-- START NAV -->
+    <nav class="navbar is-fixed-top navbar--green-background navbar--with-shadow">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="images/logo-white.png" alt="Logotipo CPHN">
+            <spam class="header--logo-txt has-text-white title--cphn">CPHN</spam>
+          </a>
+          <span class="navbar-burger burger has-text-white" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu navbar--green-background">
+          <div class="navbar-end">
+            <a class="navbar-item has-text-white" href="/">
+              Home
+            </a>
+            <a class="navbar-item has-text-white" href="galeria.html">
+              Fotos
+            </a>
+            <a class="navbar-item has-text-white is-active" href="onde-estamos.html">
+              Onde Estamos
+            </a>
+            <a class="navbar-item has-text-white">
+              Nossas Publicações
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAV -->
+  </header>
+
+  <main class="mapa">
+    <div id="map" class="mapa--esquerdo">
+    </div>
+    <div class="mapa--direito">
+      <p>lá</p>
+    </div>
+  </main>
+
+  <!-- build:js scripts/vendor.js -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+  <script>
+    const PMSP_LAT = -23.567676;
+    const PMSP_LNG = -46.637824;
+    const CPHN_LAT = -23.5711892;
+    const CPHN_LNG = -46.4434654;
+    let map = L.map('map').setView([PMSP_LAT, PMSP_LNG], 10);
+    let cartoDBPositron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    });
+    cartoDBPositron.addTo(map);
+
+    // let popup = L.popup()
+    //   .setLatLng([CPHN_LAT, CPHN_LNG])
+    //   .setContent("I am a standalone popup.")
+    //   .openOn(map);
+
+    let marker = L.marker()
+      .setLatLng([CPHN_LAT, CPHN_LNG]);
+
+      L.marker([CPHN_LAT, CPHN_LNG]).addTo(map);
+
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-104560120-4');
+
+  </script>
+</body>
+
+</html>
