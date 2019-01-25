@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "bulma": "^0.7.2",
-    "leaflet": "^1.4.0"
+    "leaflet": "^1.4.0",
+    "leaflet-responsive-popup": "^0.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
