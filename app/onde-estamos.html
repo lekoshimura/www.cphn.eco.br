@@ -129,15 +129,14 @@
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
-    let map;
     document.addEventListener('DOMContentLoaded', function (event) {
       const PMSP_LAT = -23.70;
       const PMSP_LNG = -46.63;
       const CPHN_LAT = -23.5711;
       const CPHN_LNG = -46.4420;
-
+      
       /* mapa */
-      map = L.map('map', {
+      let map = L.map('map', {
         minZoom: 7,
         maxZoom: 18,
         crs: L.CRS.EPSG3857
