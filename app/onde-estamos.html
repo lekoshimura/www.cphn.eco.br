@@ -10,7 +10,7 @@
 
   <!-- open graphics: facebook e whatsapp -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cphn.eco.br/galeria.html" />
+  <meta property="og:url" content="https://www.cphn.eco.br/onde-estamos.html" />
   <meta property="og:title" content="CPHN - Onde Estamos">
   <meta property="og:image:secure_url" content="https://www.cphn.eco.br/images/og-image.jpg" />
   <meta property="og:image:type" content="image/jpg" />
@@ -49,28 +49,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.3/leaflet.responsive.popup.css" />
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
   <style>
-    .mapa {
-      position: relative;
+    .map {
       margin: 0;
       margin-top: 52px;
       height: calc(100vh - 52px);
       width: 100vw;
+    }
+
+    .popup--header--cphn {
       display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.11rem;
     }
 
-    .mapa--esquerdo {
-      background-color: red;
-      flex: 1 1 auto;
-    }
-
-    .mapa--direito {
-      background-color: yellow;
-      flex: 1 1 auto;
+    .popup--header--logo {
+      height: 28px;
     }
 
   </style>
@@ -117,44 +117,94 @@
     <!-- END NAV -->
   </header>
 
-  <main class="mapa">
-    <div id="map" class="mapa--esquerdo">
-    </div>
-    <div class="mapa--direito">
-      <p>lá</p>
-    </div>
-  </main>
+  <main id="map" class="map"></main>
 
-  <!-- build:js scripts/vendor.js -->
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet-responsive-popup@0.6.3/leaflet.responsive.popup.js"></script>
 
+  <!-- build:js scripts/vendor.js -->
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
-    const PMSP_LAT = -23.567676;
-    const PMSP_LNG = -46.637824;
-    const CPHN_LAT = -23.5711892;
-    const CPHN_LNG = -46.4434654;
-    let map = L.map('map').setView([PMSP_LAT, PMSP_LNG], 10);
-    let cartoDBPositron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
+    let map;
+    document.addEventListener('DOMContentLoaded', function (event) {
+      const PMSP_LAT = -23.70;
+      const PMSP_LNG = -46.63;
+      const CPHN_LAT = -23.5711;
+      const CPHN_LNG = -46.4420;
+
+      /* mapa */
+      map = L.map('map', {
+        minZoom: 7,
+        maxZoom: 18,
+        crs: L.CRS.EPSG3857
+      }).setView([PMSP_LAT, PMSP_LNG], 10);
+
+      /* tileserver */
+      let Esri_WorldTopoMap = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+        })
+      Esri_WorldTopoMap.addTo(map);
+
+      /* marker e popup */
+      let popupcontent =
+        `
+        <p class="popup--header--cphn">
+          <img class="popup--header--logo" src="images/logo-green.png" alt="Logotipo CPHN">
+          <spam class="header--logo-txt title--cphn">CPHN</spam>
+        </p>
+        <address>
+          <strong>Rua Jaime Ribeiro Wright, 618</strong><br> 
+          Itaquera<br>
+          08260-070<br>
+          São Paulo, SP<br>
+          (11) 2522.8299
+        </address>`;
+      let popup = L.responsivePopup().setContent(popupcontent);
+      let marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
+      L.marker([CPHN_LAT, CPHN_LNG]).addTo(map).bindPopup(popup).openPopup();
+
+      /* layer sp */
+
+      loadJson = function (t, e) {
+        var a = new XMLHttpRequest;
+        a.onreadystatechange = function (t) {
+            4 === this.readyState && 200 === this.status && e(JSON.parse(this.responseText))
+          },
+          a.open("GET", t, !0),
+          a.send()
+      };
+
+      makeLayer = function (t, e) {
+        return L.geoJSON(t, {
+          style: {
+            color: "#1B5E20"
+          },
+          crs: L.CRS.EPSG3857
+        }).addTo(map);
+      };
+
+      map.on('zoomend', function () {
+        map.getZoom() <= 13 ? limitesp.addTo(map) : limitesp.removeFrom(map);
+      });
+
+      loadJsonFromLocalStorage = function (t) {
+        var e = localStorage.getItem(t);
+        if (e) {
+          return makeLayer(JSON.parse(e))
+        } else {
+          loadJson(t, function (e) {
+            localStorage.setItem(t, JSON.stringify(e)),
+              makeLayer(e)
+          }.bind(this))
+        }
+      }
+      let limitesp = loadJsonFromLocalStorage("data/gis/sp.geojson");
     });
-    cartoDBPositron.addTo(map);
-
-    // let popup = L.popup()
-    //   .setLatLng([CPHN_LAT, CPHN_LNG])
-    //   .setContent("I am a standalone popup.")
-    //   .openOn(map);
-
-    let marker = L.marker()
-      .setLatLng([CPHN_LAT, CPHN_LNG]);
-
-      L.marker([CPHN_LAT, CPHN_LNG]).addTo(map);
 
   </script>
   <script>
