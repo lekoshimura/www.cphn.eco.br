@@ -73,6 +73,10 @@
       height: 28px;
     }
 
+    .popup--zoomin {
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
@@ -129,18 +133,21 @@
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
+    let map;
     document.addEventListener('DOMContentLoaded', function (event) {
       const PMSP_LAT = -23.70;
       const PMSP_LNG = -46.63;
       const CPHN_LAT = -23.5711;
       const CPHN_LNG = -46.4420;
-      
+      const PMSP_COORD = L.latLng(PMSP_LAT, PMSP_LNG);
+      const CPHN_COORD = L.latLng(CPHN_LAT, CPHN_LNG);
+
       /* mapa */
-      let map = L.map('map', {
+      map = L.map('map', {
         minZoom: 7,
         maxZoom: 18,
         crs: L.CRS.EPSG3857
-      }).setView([PMSP_LAT, PMSP_LNG], 10);
+      }).setView(PMSP_COORD, 10);
 
       /* tileserver */
       let Esri_WorldTopoMap = L.tileLayer(
@@ -162,10 +169,23 @@
           08260-070<br>
           São Paulo, SP<br>
           (11) 2522.8299
-        </address>`;
+        </address>
+        <p class="popup--zoomin">🔍 Zoom</p>`;
       let popup = L.responsivePopup().setContent(popupcontent);
       let marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
-      L.marker([CPHN_LAT, CPHN_LNG]).addTo(map).bindPopup(popup).openPopup();
+      marker.addTo(map).bindPopup(popup).openPopup();
+
+      /* flyto */
+
+      let popupZoomin = document.querySelector('.popup--zoomin');
+      popupZoomin.addEventListener('click', function () {
+        map.closePopup(popup);
+        map.flyTo(CPHN_COORD, 16);
+        map.on('zoomend', function () {
+          map.openPopup(popup);
+          map.on('zoomend', function () {});
+        });
+      });
 
       /* layer sp */
 
