@@ -75,6 +75,13 @@
 
     .popup--zoomin {
       cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup--zoomin--icon {
+      font-size: 1.25rem;
+      margin-right: 0.25rem;
     }
 
   </style>
@@ -146,7 +153,8 @@
       map = L.map('map', {
         minZoom: 7,
         maxZoom: 18,
-        crs: L.CRS.EPSG3857
+        crs: L.CRS.EPSG3857,
+        zoomControl: false
       }).setView(PMSP_COORD, 10);
 
       /* tileserver */
@@ -170,7 +178,7 @@
           São Paulo, SP<br>
           (11) 2522.8299
         </address>
-        <p class="popup--zoomin">🔍 Zoom</p>`;
+        <p class="has-text-link popup--zoomin"><spam class="popup--zoomin--icon">🔍</spam> Zoom</p>`;
       let popup = L.responsivePopup().setContent(popupcontent);
       let marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
       marker.addTo(map).bindPopup(popup).openPopup();
@@ -178,13 +186,18 @@
       /* flyto */
 
       let popupZoomin = document.querySelector('.popup--zoomin');
+
       popupZoomin.addEventListener('click', function () {
         map.closePopup(popup);
         map.flyTo(CPHN_COORD, 16);
-        map.on('zoomend', function () {
-          map.openPopup(popup);
-          map.on('zoomend', function () {});
-        });
+      });
+      
+      map.addEventListener('zoomstart', function() {
+        map.closePopup(popup);
+      });
+
+      map.addEventListener('zoomend', function() {
+        map.openPopup(popup);        
       });
 
       /* layer sp */
