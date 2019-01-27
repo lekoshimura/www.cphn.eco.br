@@ -2,3 +2,7 @@
   Link: </styles/main.css>; rel=preload; as=style
   Link: </scripts/main.js>; rel=preload; as=script
   Link: </images/logo-white.png>; rel=preload; as=image
+  Link: </images/logo-green.png>; rel=preload; as=image
+  Link: </images/logo-black.png>; rel=preload; as=image
+/contato-obrigado.html
+  Link: </fonts/emojisymbols/font/EmojiSymbols-Regular.woff>; rel=preload; as=font
