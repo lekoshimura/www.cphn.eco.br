@@ -4,28 +4,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CPHN - Onde Estamos">
+  <meta name="description" content="CPHN - Contato">
   <meta name="author" content="Leonardo Eiji Koshimura">
-  <title>CPHN - Onde Estamos</title>
+  <title>CPHN - Contato</title>
 
   <!-- open graphics: facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cphn.eco.br/onde-estamos.html" />
-  <meta property="og:title" content="CPHN - Onde Estamos">
+  <meta property="og:url" content="https://www.cphn.eco.br/contato.html" />
+  <meta property="og:title" content="CPHN - Contato">
   <meta property="og:image:secure_url" content="https://www.cphn.eco.br/images/og-image.jpg" />
   <meta property="og:image:type" content="image/jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Logotipo do CPHN" />
   <meta property="og:site_name" content="CPHN" />
-  <meta property="og:description" content="CPHN - Veja onde fica nossa sede" />
+  <meta property="og:description" content="CPHN - Contato" />
   <meta property="og:locale" content="pt_BR" />
 
   <!-- twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CPHN - Centro de Pesquisas de História Natural" />
-  <meta name="twitter:description" content="CPHN - Veja onde fica nossa sede" />
-  <meta name="twitter:url" content="https://www.cphn.eco.br/onde-estamos.html" />
+  <meta name="twitter:description" content="CPHN - Contato" />
+  <meta name="twitter:url" content="https://www.cphn.eco.br/contato.html" />
   <meta name="twitter:image" content="https://www.cphn.eco.br/images/og-image.jpg" />
 
   <!-- open graphics: whatsapp (deve ser o último og:image e deve ser acompanhado do itemprop="thumbnailUrl" no <body> abaixo) -->
@@ -55,47 +55,39 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.3/leaflet.responsive.popup.css" />
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
   <style>
-    .leaflet-pane {
-      z-index: 1;
+    html {
+      background-color: #EAFFEA;
     }
 
-    .map {
-      margin: 0;
-      margin-top: 52px;
-      height: calc(100vh - 52px);
-      width: 100vw;
+    .form--contato {
+      max-width: 800px;
+      margin: 160px auto;
     }
 
-    .popup--header--cphn {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      font-size: 1.11rem;
+    @media (max-width: 1024px) {
+      .form--contato {
+        max-width: 80vw;
+        margin: 80px auto;
+      }
     }
 
-    .popup--header--logo {
-      height: 28px;
+    @media (max-width: 768px) {
+      .form--contato {
+        max-width: 90vw;
+        margin: 80px auto;
+      }
     }
 
-    .popup--zoomin {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
+    .form--contato-shadow {
+      -webkit-box-shadow: 10px 10px 70px -20px rgba(10,10,10,0.5);
+      -moz-box-shadow: 10px 10px 70px -20px rgba(10,10,10,0.5);
+      box-shadow: 10px 10px 70px -20px rgba(10,10,10,0.5);
     }
-
-    .popup--zoomin--icon {
-      font-size: 1.25rem;
-      margin-right: 0.25rem;
-    }
-
   </style>
 </head>
 
@@ -131,10 +123,10 @@
             <a class="navbar-item has-text-white" href="galeria.html">
               Fotos
             </a>
-            <a class="navbar-item has-text-white is-active" href="onde-estamos.html">
+            <a class="navbar-item has-text-white" href="onde-estamos.html">
               Onde Estamos
             </a>
-            <a class="navbar-item has-text-white" href="contato.html">
+            <a class="navbar-item has-text-white is-active" href="contato.html">
               Contato
             </a>
             <a class="navbar-item has-text-white">
@@ -147,11 +139,58 @@
     <!-- END NAV -->
   </header>
 
-  <main id="map" class="map"></main>
+  <main class="container form--contato">
+    <h1 class="title title--form">Entre em contato conosco</h1>
+    <form class="card form--contato-shadow" name="contact" method="POST" action="/contato-obrigado.html" data-netlify="true">
+      <div class="card-content">
+        <div class="field">
+          <label class="label" for="name">Seu nome:</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" name="name" placeholder="Digite seu nome." autofocus required>
+            <span class="icon is-small is-left">
+              😊
+            </span>
+          </div>
+        </div>
 
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-  <script src="https://unpkg.com/leaflet-responsive-popup@0.6.3/leaflet.responsive.popup.js"></script>
+        <div class="field">
+          <label class="label" for="email">Email:</label>
+          <div class="control has-icons-left">
+            <input class="input" type="email" placeholder="Digite seu email." value="" pattern=".+@.+" required>
+            <span class="icon is-small is-left">
+              ✉
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="subject">Assunto:</label>
+          <div class="control has-icons-left"">
+            <input class=" input" type="text" name="subject"
+            placeholder="Digite o assunto." required>
+            <span class="icon is-small is-left">
+              ✎
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="message">Mensagem:</label>
+          <div class="control">
+            <textarea class="textarea" name="message" placeholder="Digite sua mensagem aqui." required></textarea>
+          </div>
+        </div>
+
+        <div class="field is-grouped is-grouped-right">
+          <p class="control">
+            <button type="submit" class="button is-success">
+              Enviar
+            </button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </main>
 
   <!-- build:js scripts/vendor.js -->
   <!-- endbuild -->
@@ -159,103 +198,9 @@
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
-    let map;
-    document.addEventListener('DOMContentLoaded', function (event) {
-      const PMSP_LAT = -23.70;
-      const PMSP_LNG = -46.63;
-      const CPHN_LAT = -23.5711;
-      const CPHN_LNG = -46.4420;
-      const PMSP_COORD = L.latLng(PMSP_LAT, PMSP_LNG);
-      const CPHN_COORD = L.latLng(CPHN_LAT, CPHN_LNG);
-
-      /* mapa */
-      map = L.map('map', {
-        minZoom: 7,
-        maxZoom: 18,
-        crs: L.CRS.EPSG3857,
-        zoomControl: false
-      }).setView(PMSP_COORD, 10);
-
-      /* tileserver */
-      let Esri_WorldTopoMap = L.tileLayer(
-        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-          attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
-        })
-      Esri_WorldTopoMap.addTo(map);
-
-      /* marker e popup */
-      let popupcontent =
-        `
-        <p class="popup--header--cphn">
-          <img class="popup--header--logo" src="images/logo-green.png" alt="Logotipo CPHN">
-          <spam class="header--logo-txt title--cphn">CPHN</spam>
-        </p>
-        <address>
-          <strong>Rua Jaime Ribeiro Wright, 618</strong><br> 
-          Itaquera<br>
-          08260-070<br>
-          São Paulo, SP<br>
-          (11) 2522.8299
-        </address>
-        <p class="has-text-link popup--zoomin"><spam class="popup--zoomin--icon">🔍</spam> Zoom</p>`;
-      let popup = L.responsivePopup().setContent(popupcontent);
-      let marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
-      marker.addTo(map).bindPopup(popup).openPopup();
-
-      /* flyto */
-
-      let popupZoomin = document.querySelector('.popup--zoomin');
-
-      popupZoomin.addEventListener('click', function () {
-        map.closePopup(popup);
-        map.flyTo(CPHN_COORD, 16);
-      });
-
-      map.addEventListener('zoomstart', function () {
-        map.closePopup(popup);
-      });
-
-      map.addEventListener('zoomend', function () {
-        map.openPopup(popup);
-      });
-
-      /* layer sp */
-
-      loadJson = function (t, e) {
-        var a = new XMLHttpRequest;
-        a.onreadystatechange = function (t) {
-            4 === this.readyState && 200 === this.status && e(JSON.parse(this.responseText))
-          },
-          a.open("GET", t, !0),
-          a.send()
-      };
-
-      makeLayer = function (t, e) {
-        return L.geoJSON(t, {
-          style: {
-            color: "#1B5E20"
-          },
-          crs: L.CRS.EPSG3857
-        }).addTo(map);
-      };
-
-      map.on('zoomend', function () {
-        map.getZoom() <= 13 ? limitesp.addTo(map) : limitesp.removeFrom(map);
-      });
-
-      loadJsonFromLocalStorage = function (t) {
-        var e = localStorage.getItem(t);
-        if (e) {
-          return makeLayer(JSON.parse(e))
-        } else {
-          loadJson(t, function (e) {
-            localStorage.setItem(t, JSON.stringify(e)),
-              makeLayer(e)
-          }.bind(this))
-        }
-      }
-      let limitesp = loadJsonFromLocalStorage("data/gis/sp.geojson");
-    });
+    document.addEventListener('invalid', function (e) {
+      e.target.classList.add('is-danger');
+    }, true);
 
   </script>
   <script>
