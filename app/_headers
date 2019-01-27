@@ -1,0 +1,4 @@
+/*
+  Link: </styles/main.css>; rel=preload; as=style
+  Link: </scripts/main.js>; rel=preload; as=script
+  Link: </images/logo-white.png>; rel=preload; as=image
