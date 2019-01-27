@@ -22,4 +22,4 @@ convert og-image.png -resize 1200 output/og-image.png
 
 # mozpeg
 convert output/og-image.png PNM:- | cjpeg -quality $MEDIUM -outfile output/og-image.jpg
-convert output/og-image-facebook.jpg -resize 500x500 -gravity center -extent 400x400 output/og-image-whatsapp.jpg
+convert output/og-image.jpg -resize 500x500 -gravity center -extent 400x400 output/og-image-squared.jpg
