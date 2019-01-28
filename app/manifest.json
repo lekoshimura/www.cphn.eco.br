@@ -1,5 +1,9 @@
 {
+  "short_name": "CPHN",
   "name": "CPHN - Centro de Pesquisas de História Natural",
+  "background_color": "#1B5E20",
+  "theme_color": "#1B5E20",
+  "display": "standalone",
   "icons": [
     {
       "src": "\/android-icon-36x36.png",
@@ -36,6 +40,11 @@
       "sizes": "192x192",
       "type": "image\/png",
       "density": "4.0"
-    }
+    },
+    {
+      "src": "\/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }    
   ]
 }
