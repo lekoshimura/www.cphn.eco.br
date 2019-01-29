@@ -156,6 +156,11 @@
   <!-- endbuild -->
   <script>
     let map;
+    let popupZoomin;
+    let popupcontent;
+    let Esri_WorldTopoMap;
+    let popup;
+    let marker;
     document.addEventListener('DOMContentLoaded', function (event) {
       const PMSP_LAT = -23.70;
       const PMSP_LNG = -46.63;
@@ -173,14 +178,14 @@
       }).setView(PMSP_COORD, 10);
 
       /* tileserver */
-      let Esri_WorldTopoMap = L.tileLayer(
+      Esri_WorldTopoMap = L.tileLayer(
         'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
           attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
         })
       Esri_WorldTopoMap.addTo(map);
 
       /* marker e popup */
-      let popupcontent =
+      popupcontent =
         `
         <p class="popup--header--cphn">
           <img class="popup--header--logo" src="images/logo-green.png" alt="Logotipo CPHN">
@@ -194,18 +199,19 @@
           (11) 2522.8299
         </address>
         <p class="has-text-link popup--zoomin"><spam class="popup--zoomin--icon">🔍</spam> Zoom</p>`;
-      let popup = L.responsivePopup().setContent(popupcontent);
-      let marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
+      popup = L.responsivePopup().setContent(popupcontent);
+      marker = L.marker().setLatLng([CPHN_LAT, CPHN_LNG]);
       marker.addTo(map).bindPopup(popup).openPopup();
 
       /* flyto */
 
-      let popupZoomin = document.querySelector('.popup--zoomin');
-
-      popupZoomin.addEventListener('click', function () {
-        map.closePopup(popup);
-        map.flyTo(CPHN_COORD, 16);
-      });
+      let setPopupZoominEvent = function () {
+        popupZoomin = document.querySelector('.popup--zoomin');
+        popupZoomin.addEventListener('click', function () {
+          map.flyTo(CPHN_COORD, 16);
+        });
+      };
+      setPopupZoominEvent();
 
       map.addEventListener('zoomstart', function () {
         map.closePopup(popup);
@@ -213,6 +219,7 @@
 
       map.addEventListener('zoomend', function () {
         map.openPopup(popup);
+        setPopupZoominEvent();
       });
 
       /* layer sp */
@@ -250,7 +257,7 @@
 
       map.on('zoomend', function () {
         map.getZoom() <= 13 ? limitesp.addTo(map) : limitesp.removeFrom(map);
-      }).bind(this);
+      });
     });
 
   </script>
