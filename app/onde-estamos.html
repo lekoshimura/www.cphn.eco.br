@@ -235,10 +235,6 @@
         }).addTo(map);
       };
 
-      map.on('zoomend', function () {
-        map.getZoom() <= 13 ? limitesp.addTo(map) : limitesp.removeFrom(map);
-      });
-
       loadJsonFromLocalStorage = function (t) {
         var e = localStorage.getItem(t);
         if (e) {
@@ -251,6 +247,10 @@
         }
       }
       let limitesp = loadJsonFromLocalStorage("data/gis/sp.geojson");
+
+      map.on('zoomend', function () {
+        map.getZoom() <= 13 ? limitesp.addTo(map) : limitesp.removeFrom(map);
+      }).bind(this);
     });
 
   </script>
