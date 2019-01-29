@@ -1,3 +1,12 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(function (reg) {
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    }).catch(function (error) {
+      console.log('Registration failed with ' + error);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function (event) {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);

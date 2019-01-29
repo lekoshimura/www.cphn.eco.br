@@ -1,5 +1,6 @@
 // https://developers.google.com/web/fundamentals/primers/service-workers/#register_a_service_worker
-var CACHE_NAME = 'www-cphn-eco-br-cache-v1';
+caches.delete('www-cphn-eco-br-cache-v1');
+var CACHE_NAME = 'www-cphn-eco-br-cache-v2';
 var urlsToCache = [
   '/',
   '/styles/main.css',
@@ -13,40 +14,23 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(function (cache) {
-      console.log('Opened cache');
       return cache.addAll(urlsToCache);
     })
   );
 });
 
+// If we were being really clever, we would not only request the resource from the network;
+// we would also save it into the cache so that later requests
+// for that resource could be retrieved offline too
 self.addEventListener('fetch', function (event) {
   event.respondWith(
-    caches.match(event.request)
-    .then(function (response) {
-      // Cache hit - return response
-      if (response) {
-        return response;
-      }
-
-      return fetch(event.request).then(
-        function (response) {
-          // Check if we received a valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          // IMPORTANT: Clone the response. A response is a stream
-          // and because we want the browser to consume the response
-          // as well as the cache consuming the response, we need
-          // to clone it so we have two streams.
-          var responseToCache = response.clone();
-
-          caches.open(CACHE_NAME)
-            .then(function (cache) {
-              cache.put(event.request, responseToCache);
-            });
+    caches.match(event.request).then(function (resp) {
+      return resp || fetch(event.request).then(function (response) {
+        return caches.open(CACHE_NAME).then(function (cache) {
+          cache.put(event.request, response.clone());
           return response;
-        }
-      );
+        });
+      });
     })
   );
 });
