@@ -242,6 +242,10 @@
       margin: 1rem 0;
     }
 
+    .image--goro-hashimoto {
+      margin: 1rem 0;
+    }
+
     .media-center {
       display: block;
       margin-bottom: 1rem;
@@ -607,7 +611,11 @@
             <p class="title article-title">Quem Somos Nós?</p>
           </div>
         </div>
-        <div class="content article-body">
+        <div class="has-text-centered">
+          <button class="button is-warning btn-ouvir-quem-somos-nos">🔊 Ouvir Este Texto</button>
+          <button class="button btn-toggle-quem-somos-nos">⏸ Pausar</button>
+        </div>
+        <div class="content article-body article-quem-somos-nos">
           <p>O <dfn><abbr title="Centro de Pesquisas de História Natural">CPHN</abbr></dfn> é uma entidade privada sem
             fins lucrativos voltada à promoção do estudo e do contato de homem com a natureza. A composição de nossos
             filiados é bastante heterogênea. Somos botânicos, arquitetos, médicos, donas-de-casa, executivos,
@@ -666,9 +674,12 @@
             <p class="title article-title">Professor Goro Hashimoto</p>
           </div>
         </div>
-        <div class="content article-body">
-
-          <picture class="image">
+        <div class="has-text-centered">
+          <button class="button is-warning btn-ouvir-goro-hashimoto">🔊 Ouvir Este Texto</button>
+          <button class="button btn-toggle-goro-hashimoto">⏸ Pausar</button>
+        </div>
+        <div class="content article-body article-goro-hashimoto">
+          <picture class="image image--goro-hashimoto">
             <source media="(min-width: 1024px)" srcset="images/goro/goro-blur.jpg" data-srcset="images/goro/goro-lg_1x.webp 1x, images/goro/goro-lg_2x.webp 2x"
               type="image/webp" class="img--100pct lazyload">
             <source media="(min-width: 769px)" srcset="images/goro/goro-blur.jpg" data-srcset="images/goro/goro-md_1x.webp 1x, images/goro/goro-md_2x.webp 2x"
@@ -707,7 +718,11 @@
             <p class="title article-title">Nosso Herbário</p>
           </div>
         </div>
-        <div class="content article-body">
+        <div class="has-text-centered">
+          <button class="button is-warning btn-ouvir-herbario">🔊 Ouvir Este Texto</button>
+          <button class="button btn-toggle-herbario">⏸ Pausar</button>
+        </div>
+        <div class="content article-body article-herbario">
 
           <p>O <dfn>Herbário Goro Hashimoto</dfn> constitui-se certamente num dos maiores acervos de plantas
             herborizadas, em se tratando de entidade privada. A sua criação foi um sonho acalentado por quatro décadas
@@ -758,14 +773,28 @@
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
   <!-- endbuild -->
-  <script src="scripts/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes-umd.min.js"></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  <script src="scripts/main.js"></script>
   <script>
+    // header e navbar
     let navbar = document.querySelector('nav');
     let headerBackground = document.querySelector('.header--background');
     let headerContainer = document.querySelector('.header--container');
     let headerLogo = document.querySelector('.header--logo');
     let headerBackgroundInvisible = document.querySelector('.header--background--invisible');
+    // articleGoroHashimoto
+    let articleQuemSomosNos = document.querySelector('.article-quem-somos-nos');
+    let btnOuvirQuemSomosNos = document.querySelector('.btn-ouvir-quem-somos-nos');
+    let btnToggleQuemSomosNos = document.querySelector('.btn-toggle-quem-somos-nos');
+    // articleGoroHashimoto
+    let articleGoroHashimoto = document.querySelector('.article-goro-hashimoto');
+    let btnOuvirGoroHashimoto = document.querySelector('.btn-ouvir-goro-hashimoto');
+    let btnToggleGoroHashimoto = document.querySelector('.btn-toggle-goro-hashimoto');
+    // articleHerbario
+    let articleHerbario = document.querySelector('.article-herbario');
+    let btnOuvirHerbario = document.querySelector('.btn-ouvir-herbario');
+    let btnToggleHerbario = document.querySelector('.btn-toggle-herbario');
     document.addEventListener('DOMContentLoaded', function (event) {
       // toggle navbar
       let thresholdHeaderLogo = 0.8;
@@ -829,8 +858,52 @@
       };
       observerHeaderBackground = new IntersectionObserver(handleIntersectHeaderBackground, optionsHeaderBackground);
       observerHeaderBackground.observe(headerBackground);
-    });
 
+      // text-to-speech
+      let responsiveVoicePlay = function (textContainer, btnToggle) {
+        let text = textContainer.textContent.replace(/(\r\n|\n|\r)/gm, " ").replace(/ {1,}/g, " ");
+        responsiveVoice.speak(text);
+        btnToggle.innerHTML = '⏸ Pausar';
+      };
+
+      let responsiveVoicePausado = false;
+      let responsiveVoiceToggle = function (btnToggle) {
+        if (!responsiveVoicePausado) {
+          responsiveVoice.pause();
+          responsiveVoicePausado = true;
+          btnToggle.innerHTML = 'Continuar';
+        } else {
+          responsiveVoice.resume();
+          responsiveVoicePausado = false;
+          btnToggle.innerHTML = '⏸ Pausar';
+        }
+      };
+
+      if (responsiveVoice.voiceSupport()) {
+        // articleQuemSomosNos
+        btnOuvirQuemSomosNos.addEventListener('click',
+          responsiveVoicePlay.bind(this, articleQuemSomosNos, btnToggleQuemSomosNos));
+        btnToggleQuemSomosNos.addEventListener('click',
+          responsiveVoiceToggle.bind(this, btnToggleQuemSomosNos));
+        // articleGoroHashimoto
+        btnOuvirGoroHashimoto.addEventListener('click',
+          responsiveVoicePlay.bind(this, articleGoroHashimoto, btnToggleGoroHashimoto));
+        btnToggleGoroHashimoto.addEventListener('click',
+          responsiveVoiceToggle.bind(this, btnToggleGoroHashimoto));
+        // articleHerbario
+        btnOuvirHerbario.addEventListener('click',
+          responsiveVoicePlay.bind(this, articleHerbario, btnToggleHerbario));
+        btnToggleHerbario.addEventListener('click',
+          responsiveVoiceToggle.bind(this, btnToggleHerbario));
+      } else {
+        btnOuvirQuemSomosNos.classList.add('is-invisible');
+        btnToggleQuemSomosNos.classList.add('is-invisible');
+        btnOuvirGoroHashimoto.classList.add('is-invisible');
+        btnToggleGoroHashimoto.classList.add('is-invisible');
+        btnOuvirHerbario.classList.add('is-invisible');
+        btnToggleHerbario.classList.add('is-invisible');
+      }; // if (responsiveVoice.voiceSupport()
+    });
   </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
