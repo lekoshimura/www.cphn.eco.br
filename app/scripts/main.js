@@ -24,7 +24,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
       });
     });
   };
-
-  // text-speech: https://responsivevoice.org/api/
-  responsiveVoice.setDefaultVoice('Brazilian Portuguese Male');
 });
