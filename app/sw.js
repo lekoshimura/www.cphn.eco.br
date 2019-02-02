@@ -26,10 +26,14 @@ self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(function (resp) {
       return resp || fetch(event.request).then(function (response) {
-        return caches.open(CACHE_NAME).then(function (cache) {
-          cache.put(event.request, response.clone());
-          return response;
-        });
+        if (event.request.url.indexOf(event.request.referrer) < 0) {
+          return response
+        } else {
+          return caches.open(CACHE_NAME).then(function (cache) {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        }
       });
     })
   );
