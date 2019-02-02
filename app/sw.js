@@ -1,5 +1,5 @@
 // https://developers.google.com/web/fundamentals/primers/service-workers/#register_a_service_worker
-var CACHE_NAME = '2019-02-02-01';
+var CACHE_NAME = '2019-02-02-03';
 var urlsToCache = [
   '/',
   '/styles/main.css',
