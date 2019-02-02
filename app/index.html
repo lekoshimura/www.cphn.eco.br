@@ -168,6 +168,7 @@
 
     .article {
       margin: 10rem 1rem;
+      padding-bottom: 4rem;
     }
 
     @media (max-width: 1024px) {
@@ -235,6 +236,30 @@
         margin-left: -40px;
         border-radius: 50%;
       }
+    }
+
+    .article-herbario-mapinha {
+      margin: 2rem 0;
+    }
+
+    .article-herbario-mapinha-imagem-mascara {
+      opacity: 0.0;
+      transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -webkit-transition: opacity 1s ease-in-out;
+    }
+
+    .article-herbario-mapinha-imagem-mascara:hover {
+      opacity: 1.0;
+      transition: opacity .55s ease-in-out;
+      -moz-transition: opacity .55s ease-in-out;
+      -webkit-transition: opacity .55s ease-in-out;
+    }
+
+    .article-herbario-mapinha-endereco {
+      display: flex;
+      justify-content: left;
+      align-items: center;
     }
 
     .content p {
@@ -786,18 +811,36 @@
             trabalho de longos anos podem ser consultados no acervo do Herbário Goro Hashimoto, mantido pelo CPHN no
             bairro de Itaquera, onde também fica a atual sede do CPHN:</p>
 
-          <address>
-            <strong>Rua Jaime Ribeiro Wright, 618</strong><br>
-            Itaquera<br>
-            08260-070<br>
-            São Paulo, SP<br>
-            <a href="tel:+551125228299">📞 (11) 2522.8299</a>
-          </address>
+          <div class="columns card article-herbario-mapinha">
+            <div class="column">
+              <div class="article-herbario-mapinha-imagem" style="position: relative">
+                <a href="onde-estamos.html" class="article-herbario-mapinha-imagem-mascara">
+                  <div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center;">
+                    <button class="button is-link">
+                      Expandir Mapa ➚
+                    </button>
+                  </div>
+                  <picture>
+                    <source data-srcset="images/mapinha.webp" type="image/webp" class="lazyload">
+                    <source data-srcset="images/mapinha.jpg" type="image/jpg" class="lazyload">
+                    <img data-src="images/mapinha.jpg" type="image/jpeg" alt="Mapa SP CPHN" class="lazyload">
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="column article-herbario-mapinha-endereco">
+              <address>
+                <strong>Rua Jaime Ribeiro Wright, 618</strong><br>
+                Itaquera<br>
+                08260-070<br>
+                São Paulo, SP<br>
+                <a href="tel:+551125228299">📞 (11) 2522.8299</a>
+              </address>
+            </div>
+          </div>
         </div><!-- content article-body -->
       </div><!-- .card-content -->
     </article>
-
-    <hr>
 
     <article class="article">
       <div class="media">
@@ -813,7 +856,7 @@
             <div class="field">
               <label class="label" for="name">Seu nome:</label>
               <div class="control has-icons-left">
-                <input class="input" type="text" name="name" placeholder="Digite seu nome." autofocus required>
+                <input class="input" type="text" name="name" placeholder="Digite seu nome." required>
                 <span class="icon is-small is-left">
                   😊
                 </span>
