@@ -38,6 +38,10 @@ a.navbar-item:hover {
   font-weight: bold;
 }
 
+.footer {
+  color: black;
+}
+
 /* CPHN */
 
 .header--logo-txt {

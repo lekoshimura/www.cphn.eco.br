@@ -856,7 +856,7 @@
             <div class="field">
               <label class="label" for="name">Seu nome:</label>
               <div class="control has-icons-left">
-                <input class="input" type="text" name="name" placeholder="Digite seu nome." required>
+                <input class="input" type="text" name="name" id="name" placeholder="Digite seu nome." required>
                 <span class="icon is-small is-left">
                   😊
                 </span>
@@ -866,7 +866,7 @@
             <div class="field">
               <label class="label" for="email">Email:</label>
               <div class="control has-icons-left">
-                <input class="input" type="email" name="email" placeholder="Digite seu email." pattern=".+@.+" required>
+                <input class="input" type="email" name="email" id="email" placeholder="Digite seu email." pattern=".+@.+" required>
                 <span class="icon is-small is-left">
                   ✉
                 </span>
@@ -876,8 +876,7 @@
             <div class="field">
               <label class="label" for="subject">Assunto:</label>
               <div class="control has-icons-left"">
-                  <input class=" input" type="text" name="subject"
-                placeholder="Digite o assunto." required>
+                <input class=" input" type="text" name="subject" id="subject" placeholder="Digite o assunto." required>
                 <span class="icon is-small is-left">
                   ✎
                 </span>
@@ -887,13 +886,13 @@
             <div class="field">
               <label class="label" for="message">Mensagem:</label>
               <div class="control">
-                <textarea class="textarea" name="message" placeholder="Digite sua mensagem aqui." required></textarea>
+                <textarea class="textarea" name="message" id="message" placeholder="Digite sua mensagem aqui." required></textarea>
               </div>
             </div>
 
             <div class="field is-grouped is-grouped-right">
               <p class="control">
-                <button type="submit" class="button is-success">
+                <button type="submit" class="button is-link">
                   Enviar
                 </button>
               </p>
