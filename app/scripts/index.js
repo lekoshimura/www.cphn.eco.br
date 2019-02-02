@@ -6,21 +6,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // header e navbar
   let navbar = document.querySelector('nav');
   let headerBackground = document.querySelector('.header--background');
-  let headerContainer = document.querySelector('.header--container');
   let headerLogo = document.querySelector('.header--logo');
   let headerBackgroundInvisible = document.querySelector('.header--background--invisible');
-  // articleGoroHashimoto
+  // articleQuemSomosNos
   let articleQuemSomosNos = document.querySelector('.article-quem-somos-nos');
   let btnOuvirQuemSomosNos = document.querySelector('.btn-ouvir-quem-somos-nos');
-  let btnToggleQuemSomosNos = document.querySelector('.btn-toggle-quem-somos-nos');
+  // articleHistoria
+  let articleHistoria = document.querySelector('.article-historia');
+  let btnOuvirHistoria = document.querySelector('.btn-ouvir-historia');
   // articleGoroHashimoto
   let articleGoroHashimoto = document.querySelector('.article-goro-hashimoto');
   let btnOuvirGoroHashimoto = document.querySelector('.btn-ouvir-goro-hashimoto');
-  let btnToggleGoroHashimoto = document.querySelector('.btn-toggle-goro-hashimoto');
+  // articleNossosObjetivos
+  let articleNossosObjetivos = document.querySelector('.article-nossos-objetivos');
+  let btnOuvirNossosObjetivos = document.querySelector('.btn-ouvir-nossos-objetivos');
   // articleHerbario
   let articleHerbario = document.querySelector('.article-herbario');
   let btnOuvirHerbario = document.querySelector('.btn-ouvir-herbario');
-  let btnToggleHerbario = document.querySelector('.btn-toggle-herbario');
   // toggle navbar
   let thresholdHeaderLogo = 0.8;
 
@@ -85,47 +87,43 @@ document.addEventListener('DOMContentLoaded', function (event) {
   observerHeaderBackground.observe(headerBackground);
 
   // text-to-speech
-  let responsiveVoicePlay = function (textContainer, btnToggle) {
-    let text = textContainer.textContent.replace(/(\r\n|\n|\r)/gm, ' ').replace(/ {1,}/g, ' ');
-    responsiveVoice.speak(text);
-    btnToggle.innerHTML = '⏸ Pausar';
-  };
-
-  let responsiveVoicePausado = false;
-  let responsiveVoiceToggle = function (btnToggle) {
-    if (!responsiveVoicePausado) {
+  let currentSender;
+  let responsiveVoiceText;
+  let responsiveVoicePlay = function (textContainer) {
+    let newCurrentSender = currentSender !== this;
+    if (newCurrentSender) {
+      currentSender = this;
+      responsiveVoiceText = textContainer.textContent.replace(/(\r\n|\n|\r)/gm, ' ').replace(/ {1,}/g, ' ');
+      responsiveVoice.cancel();
+    }
+    if (responsiveVoice.isPlaying()) {
       responsiveVoice.pause();
-      responsiveVoicePausado = true;
-      btnToggle.innerHTML = 'Continuar';
+      this.innerHTML = '▶ Continuar';
     } else {
-      responsiveVoice.resume();
-      responsiveVoicePausado = false;
-      btnToggle.innerHTML = '⏸ Pausar';
+      newCurrentSender ? responsiveVoice.speak(responsiveVoiceText) : responsiveVoice.resume(responsiveVoiceText);
+      this.innerHTML = '⏸ Pausar';  
     }
   };
 
   if (responsiveVoice.voiceSupport()) {
     // articleQuemSomosNos
     btnOuvirQuemSomosNos.addEventListener('click',
-      responsiveVoicePlay.bind(this, articleQuemSomosNos, btnToggleQuemSomosNos));
-    btnToggleQuemSomosNos.addEventListener('click',
-      responsiveVoiceToggle.bind(this, btnToggleQuemSomosNos));
+      responsiveVoicePlay.bind(btnOuvirQuemSomosNos, articleQuemSomosNos));
+    // articleHistoria
+    btnOuvirHistoria.addEventListener('click',
+      responsiveVoicePlay.bind(btnOuvirHistoria, articleHistoria));
     // articleGoroHashimoto
     btnOuvirGoroHashimoto.addEventListener('click',
-      responsiveVoicePlay.bind(this, articleGoroHashimoto, btnToggleGoroHashimoto));
-    btnToggleGoroHashimoto.addEventListener('click',
-      responsiveVoiceToggle.bind(this, btnToggleGoroHashimoto));
+      responsiveVoicePlay.bind(btnOuvirGoroHashimoto, articleGoroHashimoto));
+    // articleNossosObjetivos
+    btnOuvirNossosObjetivos.addEventListener('click',
+      responsiveVoicePlay.bind(btnOuvirNossosObjetivos, articleNossosObjetivos));
     // articleHerbario
     btnOuvirHerbario.addEventListener('click',
-      responsiveVoicePlay.bind(this, articleHerbario, btnToggleHerbario));
-    btnToggleHerbario.addEventListener('click',
-      responsiveVoiceToggle.bind(this, btnToggleHerbario));
+      responsiveVoicePlay.bind(btnOuvirHerbario, articleHerbario));
   } else {
     btnOuvirQuemSomosNos.classList.add('is-invisible');
-    btnToggleQuemSomosNos.classList.add('is-invisible');
     btnOuvirGoroHashimoto.classList.add('is-invisible');
-    btnToggleGoroHashimoto.classList.add('is-invisible');
     btnOuvirHerbario.classList.add('is-invisible');
-    btnToggleHerbario.classList.add('is-invisible');
   }; // if (responsiveVoice.voiceSupport()
 });
