@@ -242,6 +242,20 @@
       margin: 2rem 0;
     }
 
+    .article-herbario-mapinha-imagem {
+      position: relative;
+    }
+
+    .article-herbario-mapinha-imagem--hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .article-herbario-mapinha-imagem-mascara {
       opacity: 0.0;
       transition: opacity 1s ease-in-out;
@@ -649,7 +663,7 @@
         <div class="content article-body article-quem-somos-nos">
           <p>O <dfn><abbr title="Centro de Pesquisas de História Natural">CPHN</abbr></dfn> é uma entidade privada sem
             fins lucrativos, voltada à promoção do estudo e do contato do homem com a natureza. Além de manter um
-            herbário com mais de 150.000 exemplares de plantas, o CPHN organiza anualmente viagens de estudo em
+            herbário com mais de 48.000 exemplares de plantas, o CPHN organiza anualmente viagens de estudo em
             diferentes regiões do país para fins de coleta, identificação e herborização de plantas, promove palestras
             e exposições, e viabiliza a publicação de livros.</p>
 
@@ -797,7 +811,7 @@
 
           <p>Ao longo destes anos, mais de 100 expedições de coleta de exemplares de plantas nativas foram realizadas
             em todo o território brasileiro. Os exemplares de plantas foram herborizados e contituem hoje um valioso
-            acervo de cerca de 150.000 exsicatas, que podem ser consultadas em nosso Herbário. Esta coleção representa
+            acervo de cerca de 48.000 exsicatas, que podem ser consultadas em nosso Herbário. Esta coleção representa
             hoje um importante patrimônio histórico, pois muitas destas plantas já estão extintas ou são oriundas de
             locais que já não existem mais - como são os casos das Cataratas de Sete Quedas, da porção destruída da
             Mata Atlântica, da vegetação desaparecida do Pico do Jaraguá (São Paulo) e de outros tantos casos de
@@ -813,9 +827,9 @@
 
           <div class="columns card article-herbario-mapinha">
             <div class="column">
-              <div class="article-herbario-mapinha-imagem" style="position: relative">
+              <div class="article-herbario-mapinha-imagem">
                 <a href="onde-estamos.html" class="article-herbario-mapinha-imagem-mascara">
-                  <div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center;">
+                  <div class="article-herbario-mapinha-imagem--hover">
                     <button class="button is-link">
                       Expandir Mapa ➚
                     </button>
@@ -866,7 +880,8 @@
             <div class="field">
               <label class="label" for="email">Email:</label>
               <div class="control has-icons-left">
-                <input class="input" type="email" name="email" id="email" placeholder="Digite seu email." pattern=".+@.+" required>
+                <input class="input" type="email" name="email" id="email" placeholder="Digite seu email." pattern=".+@.+"
+                  required>
                 <span class="icon is-small is-left">
                   ✉
                 </span>
@@ -876,7 +891,8 @@
             <div class="field">
               <label class="label" for="subject">Assunto:</label>
               <div class="control has-icons-left"">
-                <input class=" input" type="text" name="subject" id="subject" placeholder="Digite o assunto." required>
+                <input class=" input" type="text" name="subject" id="subject"
+                placeholder="Digite o assunto." required>
                 <span class="icon is-small is-left">
                   ✎
                 </span>
@@ -914,7 +930,7 @@
           <img title="ResponsiveVoice Text To Speech" data-src="images/footer/responsive-voice-120x31.png" class="lazyload">
         </a>
         <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
-          <a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a>
+          <a href="//responsivevoice.org/" target="_blank" rel="noopener" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a>
         </span> used under <br>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial
           License
